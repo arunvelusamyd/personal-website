@@ -1,19 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
 
-/* Everything below is scoped to the profile page only (via :has), so other
-   MkDocs pages keep their normal navbar, sidebar and footer. */
+/* ============================================================
+   Top menu bar (injected on every page by javascripts/menu.js)
+   ============================================================ */
 
-/* ---- Hide MkDocs (default theme) chrome so the page reads as a landing page ---- */
-body:has(.profile-landing) .navbar,
-body:has(.profile-landing) footer,
-body:has(.profile-landing) .bs-sidebar,
-body:has(.profile-landing) .col-md-3 {
+/* The default MkDocs navbar and footer are replaced by our custom menu. */
+.navbar,
+footer {
   display: none !important;
 }
 
-/* ---- Fixed photo background with dark gradient overlay ---- */
+.site-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 3.25rem;
+  background: rgba(18, 24, 28, 0.72);
+  -webkit-backdrop-filter: blur(0.6rem);
+  backdrop-filter: blur(0.6rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-menu-inner {
+  max-width: 60rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-menu-brand {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-menu-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-menu-links a {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-menu-links a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.site-menu-links a.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* Clear the fixed menu on document pages; on the full-screen profile hero the
+   menu simply floats over the top, so no padding is added there. */
+body.has-site-menu {
+  padding-top: 3.25rem;
+}
+
+@media (max-width: 480px) {
+  .site-menu-inner {
+    padding: 0 0.75rem;
+  }
+  .site-menu-links a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.82rem;
+  }
+  .site-menu-brand {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   Full-bleed custom pages (profile / blog feed / placeholders)
+   ============================================================ */
+
+/* Hide the doc sidebar and let the content span the full width. */
+body:has(.profile-landing) .bs-sidebar,
+body:has(.profile-landing) .col-md-3,
+body:has(.blog-feed) .bs-sidebar,
+body:has(.blog-feed) .col-md-3,
+body:has(.coming-soon) .bs-sidebar,
+body:has(.coming-soon) .col-md-3 {
+  display: none !important;
+}
+
+body:has(.profile-landing) .container,
+body:has(.blog-feed) .container,
+body:has(.coming-soon) .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+body:has(.profile-landing) .container > .row,
+body:has(.blog-feed) .container > .row,
+body:has(.coming-soon) .container > .row {
+  margin: 0 !important;
+}
+
+body:has(.profile-landing) .col-md-9,
+body:has(.profile-landing) [role="main"],
+body:has(.blog-feed) .col-md-9,
+body:has(.blog-feed) [role="main"],
+body:has(.coming-soon) .col-md-9,
+body:has(.coming-soon) [role="main"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
+}
+
+/* ---- Profile-only: fixed photo background with dark gradient overlay ---- */
 body:has(.profile-landing) {
   background: #26333a;
+  padding-top: 0; /* hero fills the viewport; menu floats over the top */
 }
 
 body:has(.profile-landing)::before {
@@ -28,27 +153,6 @@ body:has(.profile-landing)::before {
   background-position: 0% 0%, center;
   background-repeat: repeat, no-repeat;
   background-size: cover, cover;
-}
-
-/* ---- Make the main content area full-bleed and centered ---- */
-body:has(.profile-landing) .container {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-  position: relative;
-  z-index: 1;
-}
-
-body:has(.profile-landing) .container > .row {
-  margin: 0 !important;
-}
-
-body:has(.profile-landing) .col-md-9,
-body:has(.profile-landing) [role="main"] {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100% !important;
-  padding: 0 !important;
 }
 
 /* ---- The profile card ---- */
@@ -186,4 +290,158 @@ body:has(.profile-landing) [role="main"] {
   .profile-name {
     font-size: 2.5rem;
   }
+}
+
+/* ============================================================
+   Blogs feed (Medium-style list)
+   ============================================================ */
+.blog-feed {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  font-family: 'Source Sans 3', sans-serif;
+  color: #242424;
+}
+
+.blog-feed-head {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-feed-head h1 {
+  margin: 0 0 0.35rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #242424;
+  border: none;
+  padding: 0;
+}
+
+.blog-feed-head p {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 1rem;
+}
+
+.blog-card {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.blog-card-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-card-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.blog-card-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-card-author img {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blog-card-author span {
+  font-size: 0.85rem;
+  color: #242424;
+}
+
+.blog-card-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #242424;
+  border: none;
+  padding: 0;
+}
+
+.blog-card-excerpt {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6b6b6b;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card-meta {
+  font-size: 0.82rem;
+  color: #6b6b6b;
+}
+
+.blog-card-meta .dot {
+  margin: 0 0.4rem;
+}
+
+.blog-card-thumb {
+  flex: 0 0 auto;
+}
+
+.blog-card-thumb img {
+  width: 8rem;
+  height: 5.3rem;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.blog-card-link:hover .blog-card-title {
+  color: #000000;
+}
+
+@media (max-width: 560px) {
+  .blog-card-thumb img {
+    width: 5.5rem;
+    height: 3.7rem;
+  }
+  .blog-card-link {
+    gap: 1rem;
+  }
+}
+
+/* ============================================================
+   Coming-soon placeholder pages (News / Apps / Requests)
+   ============================================================ */
+.coming-soon {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Source Sans 3', sans-serif;
+  color: #242424;
+  padding: 3rem 1.25rem;
+}
+
+.coming-soon h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+}
+
+.coming-soon p {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 1.05rem;
 }
