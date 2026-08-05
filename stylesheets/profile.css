@@ -445,3 +445,8 @@ body:has(.profile-landing)::before {
   color: #6b6b6b;
   font-size: 1.05rem;
 }
+
+.blog-card-source {
+  color: #1a8917; /* Medium green */
+  font-weight: 600;
+}
