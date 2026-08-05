@@ -9,4 +9,5 @@ extra_css:
   - stylesheets/profile.css
 
 extra_javascript:
+  - javascripts/menu.js
   - javascripts/email.js
