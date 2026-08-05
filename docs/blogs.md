@@ -213,4 +213,130 @@
     </a>
   </article>
 
+  <article class="blog-card">
+    <a class="blog-card-link" href="../ai-models/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">AI Models at a Glance</h2>
+        <p class="blog-card-excerpt">A quick reference to the main AI model families — Machine Learning (supervised, unsupervised, reinforcement), Deep Learning (CNNs, RNNs, Transformers), and Generative AI (GANs, diffusion, LLMs).</p>
+        <div class="blog-card-meta">
+          <span>Feb 2025</span>
+          <span class="dot">&middot;</span>
+          <span>1 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../auth-signing-in/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">Authentication Demystified</h2>
+        <p class="blog-card-excerpt">Authentication vs authorization, OAuth 2.0 and OpenID Connect, and how Single Sign-On ties login sessions, IdP cookies and multi-domain access together.</p>
+        <div class="blog-card-meta">
+          <span>Sep 2024</span>
+          <span class="dot">&middot;</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../artificial-intelligence-intro/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">Understanding the AI Landscape</h2>
+        <p class="blog-card-excerpt">How AI, Machine Learning, Deep Learning, Generative AI and Data Science fit together — from traditional rule-based systems to modern learning-based approaches.</p>
+        <div class="blog-card-meta">
+          <span>Sep 2024</span>
+          <span class="dot">&middot;</span>
+          <span>3 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../dns-domain-name-system/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">DNS — Domain Name System</h2>
+        <p class="blog-card-excerpt">How the Domain Name System turns human-friendly names like www.google.com into IP addresses — TLDs, SLDs, FQDNs, subdomains, and how resolution works.</p>
+        <div class="blog-card-meta">
+          <span>Aug 2024</span>
+          <span class="dot">&middot;</span>
+          <span>2 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../aws-serverless/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">AWS Serverless</h2>
+        <p class="blog-card-excerpt">Running code in the cloud without managing servers — Lambda, DynamoDB, Cognito, API Gateway, event-driven design and pay-per-execution pricing.</p>
+        <div class="blog-card-meta">
+          <span>Oct 2023</span>
+          <span class="dot">&middot;</span>
+          <span>2 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../aws-infrastructure-as-code/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">AWS — Infrastructure as Code</h2>
+        <p class="blog-card-excerpt">Managing infrastructure through machine-readable definition files — comparing Elastic Beanstalk, CloudFormation, SAM and the AWS CDK.</p>
+        <div class="blog-card-meta">
+          <span>Oct 2023</span>
+          <span class="dot">&middot;</span>
+          <span>2 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-link" href="../observability-in-aws/">
+      <div class="blog-card-body">
+        <div class="blog-card-author">
+          <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
+          <span>Arunkumar Velusamy</span>
+        </div>
+        <h2 class="blog-card-title">Observability in AWS</h2>
+        <p class="blog-card-excerpt">Why and what to monitor in production — CloudWatch metrics, logs and events, EventBridge, CloudTrail auditing, and X-Ray tracing across microservices.</p>
+        <div class="blog-card-meta">
+          <span>Aug 2023</span>
+          <span class="dot">&middot;</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </a>
+  </article>
+
 </div>
