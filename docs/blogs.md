@@ -49,7 +49,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/frontend-revisited-58a787c7d9f0" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../frontend-revisited/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -61,7 +61,6 @@
           <span>May 2026</span>
           <span class="dot">&middot;</span>
           <span>6 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -71,7 +70,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/agent-engineering-d34965023e9a" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../agent-engineering/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -83,7 +82,6 @@
           <span>Apr 2026</span>
           <span class="dot">&middot;</span>
           <span>3 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -93,7 +91,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/neural-networks-3cf8b2a34012" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../neural-networks/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -105,7 +103,6 @@
           <span>Jan 2026</span>
           <span class="dot">&middot;</span>
           <span>2 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -115,7 +112,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/supervised-machine-learning-classification-7a7681f9e850" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../supervised-machine-learning-classification/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -127,7 +124,6 @@
           <span>Sep 2025</span>
           <span class="dot">&middot;</span>
           <span>3 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -137,7 +133,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/gpu-b765e304bb9a" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../gpu/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -149,7 +145,6 @@
           <span>Sep 2025</span>
           <span class="dot">&middot;</span>
           <span>4 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -159,7 +154,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/regression-with-multiple-input-variables-926408bbe91c" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../regression-with-multiple-input-variables/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -171,7 +166,6 @@
           <span>Jul 2025</span>
           <span class="dot">&middot;</span>
           <span>3 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -181,7 +175,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/machine-learning-get-start-b6db7076e7ad" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../machine-learning-get-start/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -193,7 +187,6 @@
           <span>Jun 2025</span>
           <span class="dot">&middot;</span>
           <span>4 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
@@ -203,7 +196,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/ai-frameworks-35b2da360221" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../ai-frameworks/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -215,7 +208,6 @@
           <span>Feb 2025</span>
           <span class="dot">&middot;</span>
           <span>4 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
     </a>
