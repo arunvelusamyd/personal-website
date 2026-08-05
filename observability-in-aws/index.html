@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/observability-in-aws/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Observability in AWS - Arunkumar Velusamy</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/profile.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Arunkumar Velusamy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../agent-engineering/" class="nav-link">AI Agent Engineering</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai-frameworks/" class="nav-link">AI Toolbox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai-models/" class="nav-link">AI Models at a Glance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai-terms/" class="nav-link">AI Terms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../apps/" class="nav-link">Apps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../artificial-intelligence-intro/" class="nav-link">Understanding the AI Landscape</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../auth-signing-in/" class="nav-link">Authentication Demystified</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../aws-infrastructure-as-code/" class="nav-link">AWS — Infrastructure as Code</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../aws-serverless/" class="nav-link">AWS Serverless</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../dns-domain-name-system/" class="nav-link">DNS — Domain Name System</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../frontend-revisited/" class="nav-link">Frontend Revisited</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gpu/" class="nav-link">GPU?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../machine-learning-get-start/" class="nav-link">Machine Learning — Get start</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../market-indicators/" class="nav-link">Market Indicators</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../news/" class="nav-link">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Observability in AWS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../requests/" class="nav-link">Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../supervised-machine-learning-classification/" class="nav-link">Supervised Machine Learning — Classification</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../news/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#observability-in-aws" class="nav-link">Observability in AWS</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#why-do-we-need-to-monitor-our-application" class="nav-link">Why do we need to monitor our application?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-do-we-need-to-monitor" class="nav-link">What do we need to monitor?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#amazon-cloudwatch" class="nav-link">Amazon CloudWatch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cloudwatch-metrics" class="nav-link">CloudWatch Metrics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cloudwatch-logs" class="nav-link">CloudWatch logs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cloudwatch-events" class="nav-link">CloudWatch Events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cloud-trail" class="nav-link">Cloud Trail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#x-ray" class="nav-link">X-Ray</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#x-ray-sdk-x-ray-daemon" class="nav-link">X-Ray SDK &amp; X-Ray Daemon</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#x-ray-instrumentation" class="nav-link">X-Ray Instrumentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#x-ray-sampling" class="nav-link">X-Ray sampling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="observability-in-aws">Observability in AWS</h1>
+<p><em>By Arunkumar Velusamy · Aug 2023</em></p>
+<hr />
+<p>Before starting the Monitoring or Observability features of AWS, I would like to write down my thoughts on why and what we need to monitor in a few sentences. It was an interesting topic for me for the last few years. Because it's all about data, metrics, and analytics. Spent some time reading about Opentracing, OpenTelemetry, elastic search, kibana, grafana in the past.</p>
+<h2 id="why-do-we-need-to-monitor-our-application">Why do we need to monitor our application?</h2>
+<p>Once application development is done, we deploy them into production. Now we have to make sure that it is running properly, working as expected &amp; It is more stable. In case of full or partial outages, monitoring will help us to respond quickly, even before the application users report the outages or sometimes we can even avoid the outages. Monitoring will also help to improve performance and reduce application latency. We can also reduce costs. For example, if the trend is very low or there are not many requests to process, we can shut down some servers to reduce costs.</p>
+<h2 id="what-do-we-need-to-monitor">What do we need to monitor?</h2>
+<p>we can monitor both technology metrics &amp; application/business trends. When we say technology metrics, we can monitor/track the below metrics,</p>
+<ul>
+<li>CPU utilization</li>
+<li>Disk usage</li>
+<li>Thread counts</li>
+<li>Garbage collection</li>
+<li>Disk IO and etc</li>
+</ul>
+<p>When we say application or business trends, we have to collect both metrics and application logs to monitor the trends based on,</p>
+<ul>
+<li>Number of successful logins</li>
+<li>Number of requests</li>
+<li>Payment failure</li>
+</ul>
+<p>These will help to improve the stability, performance &amp; user experience.</p>
+<h2 id="amazon-cloudwatch">Amazon CloudWatch</h2>
+<p>CloudWatch is to collect &amp; track metrics of AWS resources, which we are using for our application. It is a metric repository. AWS resources like EC2 put metrics to this repository and we can retrieve statistics based on those metrics. We can also put our own custom metrics.</p>
+<p><strong>Alarms &amp; Events</strong></p>
+<p>We can configure alarms that watch metrics and send notifications or automatically start/stop/terminate the resource when certain criteria are met. For example, we can monitor the CPU usage and disk reads and writes of our EC2 instances, then use that data to determine whether we should launch additional instances to handle the increased load or stop some when the load is very low. We can also set up only sending notifications to get some alerts &amp; react based on the data/metrics.</p>
+<h2 id="cloudwatch-metrics">CloudWatch Metrics</h2>
+<p>Metrics are the fundamental concept in CloudWatch. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor and the data points as representing the values of that variable over time.</p>
+<p>Metrics are data about the performance of your systems. AWS services such as EC2 instances, EBS volumes, RDS DB instances, will send data like CPU utilization, disk usage to CloudWatch. We can also publish custom metrics from our applications to CloudWatch. CloudWatch will load these metrics and allow us to search for data/metrics, view trends from the graph and create alarms.</p>
+<p>Below are some of the terminologies we use in CloudWatch,<br />
+<strong>Namespaces</strong>: A namespace is a container for CloudWatch metrics. There is no default namespace. You must specify a namespace for each data point you publish to CloudWatch.<br />
+<strong>Timestamps</strong>: Each metric data point must be associated with a time stamp. If you do not provide a time stamp, CloudWatch creates a timestamp for you based on the time the data point was received.<br />
+<strong>Dimensions</strong>: A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric.</p>
+<h2 id="cloudwatch-logs">CloudWatch logs</h2>
+<p>CloudWatch logs enable us to centralize the logs from all of our systems, application &amp; AWS Services such as EC2 instances, AWS Lambda function executions, Cloud Trail, VPC flow logs, Route 53. We can send our own logs to CloudWatch.</p>
+<p>CloudWatch Logs enables us to see all of our logs, regardless of their source, as a single and consistent flow of events ordered by time. We can query them and sort them based on other dimensions, group them by specific fields, create custom computations with a powerful query language, and visualize log data in dashboards.</p>
+<p><strong>Alerts</strong>: We can also create alerts based on some rules &amp; can trigger when specified information is found, such as Out of memory error or HTTP error code 404 or any business exception.</p>
+<p><strong>Log Groups</strong> represent an application &amp; logs from all resources of the application or we can also group them based on resource types.<br />
+<strong>Log Stream</strong> represents instances &amp; logs from instances within our application<br />
+<strong>Log event</strong> is a record of some activity recorded by the application or resource being monitored.<br />
+<strong>Metric filters</strong> to extract metric observations from ingested events and transform them to data points in a CloudWatch metric.<br />
+<strong>Retention settings</strong> can be used to specify how long log events are kept in CloudWatch Logs.</p>
+<h2 id="cloudwatch-events">CloudWatch Events</h2>
+<p>Amazon CloudWatch Events delivers a near real-time stream of system events that describe changes in Amazon Web Services (AWS) resources. For example, EC2 instance start, EBS volume create/delete, CodeDeploy failure.</p>
+<p>Using simple rules that you can quickly set up, you can match events and route them to one or more target functions or streams.</p>
+<p><strong>Events</strong>: An event indicates a change in your AWS environment. AWS resources can generate events when their state changes.<br />
+<strong>Rules</strong>: A rule matches incoming events and routes them to targets for processing. A single rule can route to multiple targets, all of which are processed in parallel. Rules are not processed in a particular order. <strong>Targets</strong>: A target processes events. Targets can include Amazon EC2 instances, AWS Lambda functions, Kinesis streams, Amazon ECS tasks, Step Functions state machines, Amazon SNS topics, Amazon SQS queues, and built-in targets. A target receives events in JSON format.</p>
+<h3 id="amazon-eventbridge">Amazon EventBridge</h3>
+<p>Amazon EventBridge is the advanced version to manage events. It uses the same CloudWatch Events API but provides more features than CloudWatch Events. It is the next version of CloudWatch Events.</p>
+<p>Amazon EventBridge is a serverless event bus service that you can use to connect your applications with data from a variety of sources.</p>
+<p><strong>Default event Bus</strong>: When we use CloudWatch events, We actually use Default event Bus. It is generated by AWS services. But in EventBridge, multiple buses are added.<br />
+<strong>Partner event Bus</strong>: it receives events from SaaS service or application.<br />
+<strong>Custom event Bus</strong>: We can define our own custom event bus for our own application.</p>
+<p><strong>Amazon EventBridge Schema</strong></p>
+<p>A schema defines the structure of events that are sent to EventBridge. EventBridge provides schemas for all events that are generated by AWS services. You can also create or upload custom schemas or infer schemas directly from events on an event bus. It allows you to generate code for our application, that will know in advance how data is structured in the event bus. Schemas can be versioned.</p>
+<h2 id="cloud-trail">Cloud Trail</h2>
+<p>From the AWS documentation,</p>
+<p><em>AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account. Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail.</em></p>
+<p>CloudWatch is all about performance, metrics, application logs, and alarms. But Cloud Trail records all user activity in our AWS account. The user activity can be from anywhere like AWS console, AWS CLI, AWS SDKs &amp; APIs. It records events related to the creation, modification, or deletion of AWS resources such as IAM users, S3 Buckets, and EC2 instances.</p>
+<p>It also delivers log files containing API calls to an S3 bucket. So It can be integrated with CloudWatch logs.</p>
+<p>If we need an audit log of user activity in our AWS account, we have to use CloudTrail. CloudWatch is all about monitoring the application by its performance, metrics, logs, and creating alarms.</p>
+<h2 id="x-ray">X-Ray</h2>
+<p>Visual analysis of our application. We can see data/request flow into our application and can quickly see the dependencies of a service/API request or our application. This is so helpful when we have microservice-based architecture.</p>
+<p>From AWS documentation,</p>
+<p>AWS X-Ray is a service that collects data about requests that your application serves and provides tools that you can use to view, filter, and gain insights into that data to identify issues and opportunities for optimization.</p>
+<p>X-ray is about visualizing &amp; tracking the end-to-end flow of any request coming into our system. the request.</p>
+<p>If your application is monolithic, then we may not need X-Ray to track the request. But when we have a microservice-based application, we need a tool like X-Ray to track the request flow. Because the request will flow through multiple services, before responding to the client. If there is any issue or error in the request, it is hard to figure out where the issue is.</p>
+<p>X-Ray will help us to look at the end-to-end view of the request &amp; figure out where the issue or error is &amp; help to troubleshoot. we can also find out which service is taking too long to respond and that will help us to improve the application performance.</p>
+<h2 id="x-ray-sdk-x-ray-daemon">X-Ray SDK &amp; X-Ray Daemon</h2>
+<p>We can enable X-ray by importing X-Ray SDK in our code or by installing the X-Ray daemon.<br />
+X-Ray SDK will capture the calls to AWS services, database calls &amp; Calls to Queue(like SQS) and share them with AWS X-Ray.<br />
+The AWS X-Ray daemon is a software application that listens for traffic on UDP port 2000, gathers raw segment data, and relays it to the AWS X-Ray API. We can also enable X-Ray AWS integration. If services like AWS Lambda that already been integrated with AWS X-Ray, then it will run the daemon. we don't need to do anything. But each application must have the IAM rights to write the data to X-Ray</p>
+<h2 id="x-ray-instrumentation">X-Ray Instrumentation</h2>
+<p>Instrumenting the application involves sending trace data for incoming and outbound requests and other events within the application, along with metadata about each request. There are three instrumentation options.</p>
+<ul>
+<li><strong>Auto instrumentation</strong>: Instrument your application with zero code changes, typically via configuration changes, adding an auto-instrumentation agent, or other mechanisms.</li>
+<li><strong>Library instrumentation</strong>: Make minimal application code changes to add pre-built instrumentation targeting specific libraries or frameworks, such as the AWS SDK, Apache HTTP clients, or SQL clients.</li>
+<li><strong>Manual instrumentation</strong>: Add instrumentation code to your application at each location where we want to send trace information.</li>
+</ul>
+<h2 id="x-ray-sampling">X-Ray sampling</h2>
+<p>X-Ray SDK applies a sampling algorithm to determine which requests get traced. By default, the X-Ray SDK records the first request each second and five percent of any additional requests.</p>
+<p><strong><em>Note</em></strong><em>: CloudWatch is for overall metrics. X-Ray is for tracing. CloudTrail is for auditing the API calls.</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/menu.js"></script>
+        <script src="../javascripts/email.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

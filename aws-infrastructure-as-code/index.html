@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/gpu/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/aws-infrastructure-as-code/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>GPU? - Arunkumar Velusamy</title>
+        <title>AWS — Infrastructure as Code - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                                 <a href="../auth-signing-in/" class="nav-link">Authentication Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../aws-infrastructure-as-code/" class="nav-link">AWS — Infrastructure as Code</a>
+                                <a href="./" class="nav-link active" aria-current="page">AWS — Infrastructure as Code</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../aws-serverless/" class="nav-link">AWS Serverless</a>
@@ -75,7 +75,7 @@
                                 <a href="../frontend-revisited/" class="nav-link">Frontend Revisited</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">GPU?</a>
+                                <a href="../gpu/" class="nav-link">GPU?</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../machine-learning-get-start/" class="nav-link">Machine Learning — Get start</a>
@@ -110,12 +110,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../frontend-revisited/" class="nav-link">
+                                <a rel="prev" href="../auth-signing-in/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../machine-learning-get-start/" class="nav-link">
+                                <a rel="next" href="../aws-serverless/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -137,9 +137,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#gpu" class="nav-link">GPU?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#aws-infrastructure-as-code" class="nav-link">AWS — Infrastructure as Code</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#start-with-core-what-is-core" class="nav-link">Start with Core. What is core?</a>
+            <li class="nav-item" data-bs-level="2"><a href="#infrastructure-as-code" class="nav-link">Infrastructure as Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cloudformation" class="nav-link">CloudFormation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aws-cdk" class="nav-link">AWS CDK</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#aws-elastic-beanstalk" class="nav-link">AWS Elastic Beanstalk</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#serverless-application-model" class="nav-link">Serverless Application Model</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -150,79 +166,27 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="gpu">GPU?</h1>
-<p><em>By Arunkumar Velusamy · Sep 2025</em></p>
+<h1 id="aws-infrastructure-as-code">AWS — Infrastructure as Code</h1>
+<p><em>By Arunkumar Velusamy · Oct 2023</em></p>
 <hr />
-<h2 id="start-with-core-what-is-core">Start with Core. What is core?</h2>
-<p>There are genius people talk about single core , dual core, quad core and multi-core. Let start from here,</p>
-<h3 id="single-core">Single Core</h3>
-<p>Only one core was responsible for all processing.It could execute <strong>one instruction at a time</strong> (per clock cycle).It used <strong>sequential execution</strong>: step-by-step, one task at a time.</p>
-<h3 id="multi-core">Multi-Core</h3>
-<p>More than one core. Each core can work <strong>simultaneously</strong> on a separate task or split a larger task.This allows <strong>parallel processing</strong>, which is faster and more efficient.</p>
-<h3 id="problem-with-single-core">Problem with Single core</h3>
-<p>Chipmakers kept making CPUs faster by increasing their <strong>clock speed</strong> (e.g., from 1 GHz to 3+ GHz). But higher speed produced more heat.You couldn't go much faster without overheating or using too much power.</p>
-<h3 id="solution">Solution</h3>
-<p>Instead of one core going faster, Added <strong>more cores</strong> to do more in parallel.</p>
-<p><em>What Is Clock Speed?</em></p>
-<p><em>Clock speed (also called clock rate) is the rate at which a computer's processor (CPU or GPU) completes cycles — i.e., it tells you how many operations a processor can do per second. It is measured in:</em></p>
-<ul>
-<li><em>Hertz (Hz) = 1 cycle per second</em></li>
-<li><em>Gigahertz (GHz) = 1 billion cycles per second</em></li>
-</ul>
-<p>What's a Cycle?</p>
-<p><em>A clock cycle is like a tick of a metronome. On each tick, the processor can do something — like:</em></p>
-<ul>
-<li><em>Fetch an instruction</em></li>
-<li><em>Decode it</em></li>
-<li><em>Execute it</em></li>
-<li><em>Write back a result</em></li>
-</ul>
-<p><em>One instruction might take 1 or several cycles, depending on complexity and CPU architecture.</em></p>
-<h3 id="impact-on-machine-learning">Impact on Machine Learning</h3>
-<p>Matrix and vector operations (common in ML) benefit hugely from parallelism.Modern ML libraries (like TensorFlow, PyTorch) are optimized to use all available cores — sometimes even offloading to GPUs (which are massively parallel).</p>
-<h3 id="multi-core-cpus-are-still-sequential-in-nature-whats-true">Multi-Core CPUs Are Still "Sequential in Nature". What's True?</h3>
-<ul>
-<li>Each core in a CPU executes instructions sequentially — one instruction at a time.</li>
-<li>But with multiple cores, you can run multiple sequences (threads) in parallel.</li>
-<li>So even though you have parallelism at the thread or process level, CPUs don't do true parallel math operations at the scale or structure that ML needs.</li>
-</ul>
-<h3 id="limitation-for-deep-learning">Limitation for Deep Learning</h3>
-<p>Deep learning tasks (like training neural networks) involve operations like:</p>
-<ul>
-<li>Matrix multiplication</li>
-<li>Dot products</li>
-<li>Tensor reshaping</li>
-</ul>
-<p>These require hundreds of thousands to millions of the same operation done simultaneously.</p>
-<h3 id="cpus-even-multi-core-are-not-designed-for-this-kind-of-massively-parallel-math">CPUs (even multi-core) are not designed for this kind of massively parallel math</h3>
-<ul>
-<li>A 4-core or 8-core CPU can process <strong>4–8 things in parallel</strong>, maybe with 2 threads per core.</li>
-<li>But a GPU can execute tens of thousands of operations in parallel (e.g., NVIDIA A100 has ~70,000 CUDA cores).</li>
-</ul>
-<p><img alt="" src="../img/blog-gpu.png" /></p>
-<h3 id="what-makes-gpu-different-from-cpu">What makes GPU different from CPU?</h3>
-<ul>
-<li>CPUs are designed for general-purpose, flexible, sequential tasks.</li>
-<li>GPUs are designed for highly parallel, repetitive math operations — like those used in graphics rendering and machine learning.</li>
-<li>The key difference lies in architecture: how their transistors are allocated and optimized.</li>
-</ul>
-<p><em>Note : SIMD (Single Instruction, Multiple Data) is a parallel computing technique where a single CPU instruction operates on multiple data points simultaneously</em></p>
-<h3 id="cpu">CPU</h3>
-<p>Optimized for single-thread performance. Large cache, deep pipelines, sophisticated branch prediction.Good at handling many different types of tasks, including ones with a lot of logic.</p>
-<h3 id="gpu_1">GPU</h3>
-<p>Optimized for doing the same math operation on large amounts of data (e.g., multiplying numbers in a matrix).Minimal control logic — more transistors devoted to raw arithmetic operations.Executes thousands of threads in parallel using SIMD architecture.</p>
-<h3 id="why-cant-cpus-just-add-more-cores-like-a-gpu">Why Can't CPUs Just "Add More Cores Like a GPU"?</h3>
-<p>Physical Limits. CPUs are complex: each core has lots of control circuitry, branch prediction, caching, pipelining, etc.This takes up a lot of chip area and power.You can't just fit 1000 CPU cores on a chip — it's too costly, hot, and inefficient.</p>
-<h3 id="matrix-multiplication-is-fundamental-to-machine-learning">Matrix multiplication is fundamental to machine learning</h3>
-<ul>
-<li>CPU: Performs the multiplication row-by-row or chunk-by-chunk.</li>
-<li>GPU: Launches thousands of threads, each doing a small multiplication at the same time.</li>
-</ul>
-<p>This is why training a neural network on a CPU could take hours or days, but on a GPU, it could take minutes.</p>
-<h3 id="assign-the-task-to-gpu">Assign the task to GPU</h3>
-<p>It does not happen automatically. we must explicitly tell the CPU to offload a task to the GPU. The operating system and high-level frameworks know how to offload work to the GPU, but you must write or use library/software that supports GPU offloading</p>
-<h3 id="final-note">Final Note</h3>
-<p>A GPU runs thousands or millions of tasks in parallel, all with the same instruction but on different data. It has thousands of cores, which are less powerful individually than CPU cores but are highly efficient for parallel computing. CPU is designed to perform heavy, sequential tasks. While a multi-core CPU can handle more multitasking than a single-core. But It can not have thousands of cores.A single CPU core is significantly more powerful and performant than a single GPU core.</p></div>
+<p>While reading more about AWS &amp; its resources, Just came across the term Infrastructure as Code(IaC) in many places like Amazon Elastic Beanstalk(EB), CloudFormation, SAM(Serverless Application Model) and AMS CDK(Cloud Development Kit).</p>
+<p>So like to explore a bit more about Infrastructure as Code and like to understand the concepts &amp; differences between EB, CDK, SAM, CloudFormation.</p>
+<h2 id="infrastructure-as-code">Infrastructure as Code</h2>
+<p>Wikipedia definition, Infrastructure as Code (IaC) is the process of managing and provisioning computer data centres through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.</p>
+<p>We do not need to buy physical hardware &amp; wire them together to set up your data centres and We do not need to use AWS console or CLI every time to set up your data centres.</p>
+<p>You can create your own data centre at any time by writing some program or configuration template which can be reused at any time later to recreate the data centre with the same setup. We can easily upgrade and change using the already written code.</p>
+<h2 id="cloudformation">CloudFormation</h2>
+<p>CloudFormation allows us to declare AWS resources in a template file, which will then be used to create an infrastructure that we need to run our applications.</p>
+<p>we can use a template to create, update and delete an entire stack as a single unit, instead of managing resources individually. We can delete or recreate the entire infrastructure on the fly.</p>
+<p>It is declarative programming used to code our infrastructure. Write your infrastructure once &amp; launch them as many as you want in any region using any account.</p>
+<h2 id="aws-cdk">AWS CDK</h2>
+<p>We can use AWS CDK(Cloud development Kit) to define our infrastructure using a familiar programming language like Java, Javascript, Python, .NET. The program will then be compiled into a CloudFormation template. Read more about CDK CLI, CDK synth &amp; constructs.</p>
+<h2 id="aws-elastic-beanstalk">AWS Elastic Beanstalk</h2>
+<p>AWS Elastic Beanstalk enables you to manage all of the resources that run your application as an environment. It helps to run &amp; manage web apps easily.</p>
+<p>We can easily deploy &amp; scale web applications without worrying about the underlying AWS resources like EC2, ELB. All we need to do is just upload our code &amp; select the platforms to run the application.</p>
+<p>Under the hood, Elastic Beanstalk relies on CloudFormation. We can define CloudFormation resources in .ebextensions. Beanstalk is free but we have to pay for the underlying instances.</p>
+<h2 id="serverless-application-model">Serverless Application Model</h2>
+<p>SAM is used to define Serverless applications using CloudFormation. We can write code for 3 serverless resource types, Lambda, API Gateway, DynamoDB. SAM CLI will help to package &amp; deploy our code.</p></div>
             </div>
         </div>
 

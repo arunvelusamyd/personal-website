@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/gpu/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/auth-signing-in/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>GPU? - Arunkumar Velusamy</title>
+        <title>Authentication Demystified - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
                                 <a href="../artificial-intelligence-intro/" class="nav-link">Understanding the AI Landscape</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../auth-signing-in/" class="nav-link">Authentication Demystified</a>
+                                <a href="./" class="nav-link active" aria-current="page">Authentication Demystified</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../aws-infrastructure-as-code/" class="nav-link">AWS — Infrastructure as Code</a>
@@ -75,7 +75,7 @@
                                 <a href="../frontend-revisited/" class="nav-link">Frontend Revisited</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">GPU?</a>
+                                <a href="../gpu/" class="nav-link">GPU?</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../machine-learning-get-start/" class="nav-link">Machine Learning — Get start</a>
@@ -110,12 +110,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../frontend-revisited/" class="nav-link">
+                                <a rel="prev" href="../artificial-intelligence-intro/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../machine-learning-get-start/" class="nav-link">
+                                <a rel="next" href="../aws-infrastructure-as-code/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -137,9 +137,61 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#gpu" class="nav-link">GPU?</a>
+            <li class="nav-item" data-bs-level="1"><a href="#authentication-demystified" class="nav-link">Authentication Demystified</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#start-with-core-what-is-core" class="nav-link">Start with Core. What is core?</a>
+            <li class="nav-item" data-bs-level="2"><a href="#authentication-vs-authorization" class="nav-link">Authentication vs Authorization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#oauth" class="nav-link">OAuth</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#auth-resource-server" class="nav-link">Auth &amp; Resource server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-authorization-code-flow" class="nav-link">1. Authorization code flow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-implicit-flow" class="nav-link">2. Implicit flow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-resource-owner-flow" class="nav-link">3. Resource owner flow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-client-credential-flow" class="nav-link">4. Client credential flow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#open-id-connect" class="nav-link">Open ID Connect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#single-sign-onsso" class="nav-link">Single Sign-on(SSO)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#login-session" class="nav-link">Login session</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#clients-using-multiple-domains" class="nav-link">Clients using Multiple domains</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#no-cross-domain-cookie-sharing" class="nav-link">No Cross domain cookie sharing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#auth-resource-are-in-same-domain" class="nav-link">Auth &amp; resource are in same domain</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#login-has-no-connection-with-client-application" class="nav-link">Login has no connection with client application</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -150,79 +202,63 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="gpu">GPU?</h1>
-<p><em>By Arunkumar Velusamy · Sep 2025</em></p>
+<h1 id="authentication-demystified">Authentication Demystified</h1>
+<p><em>OAuth 2.0, OpenID Connect, SSO and How They Work Together</em></p>
+<p><em>By Arunkumar Velusamy · Sep 2024</em></p>
 <hr />
-<h2 id="start-with-core-what-is-core">Start with Core. What is core?</h2>
-<p>There are genius people talk about single core , dual core, quad core and multi-core. Let start from here,</p>
-<h3 id="single-core">Single Core</h3>
-<p>Only one core was responsible for all processing.It could execute <strong>one instruction at a time</strong> (per clock cycle).It used <strong>sequential execution</strong>: step-by-step, one task at a time.</p>
-<h3 id="multi-core">Multi-Core</h3>
-<p>More than one core. Each core can work <strong>simultaneously</strong> on a separate task or split a larger task.This allows <strong>parallel processing</strong>, which is faster and more efficient.</p>
-<h3 id="problem-with-single-core">Problem with Single core</h3>
-<p>Chipmakers kept making CPUs faster by increasing their <strong>clock speed</strong> (e.g., from 1 GHz to 3+ GHz). But higher speed produced more heat.You couldn't go much faster without overheating or using too much power.</p>
-<h3 id="solution">Solution</h3>
-<p>Instead of one core going faster, Added <strong>more cores</strong> to do more in parallel.</p>
-<p><em>What Is Clock Speed?</em></p>
-<p><em>Clock speed (also called clock rate) is the rate at which a computer's processor (CPU or GPU) completes cycles — i.e., it tells you how many operations a processor can do per second. It is measured in:</em></p>
-<ul>
-<li><em>Hertz (Hz) = 1 cycle per second</em></li>
-<li><em>Gigahertz (GHz) = 1 billion cycles per second</em></li>
-</ul>
-<p>What's a Cycle?</p>
-<p><em>A clock cycle is like a tick of a metronome. On each tick, the processor can do something — like:</em></p>
-<ul>
-<li><em>Fetch an instruction</em></li>
-<li><em>Decode it</em></li>
-<li><em>Execute it</em></li>
-<li><em>Write back a result</em></li>
-</ul>
-<p><em>One instruction might take 1 or several cycles, depending on complexity and CPU architecture.</em></p>
-<h3 id="impact-on-machine-learning">Impact on Machine Learning</h3>
-<p>Matrix and vector operations (common in ML) benefit hugely from parallelism.Modern ML libraries (like TensorFlow, PyTorch) are optimized to use all available cores — sometimes even offloading to GPUs (which are massively parallel).</p>
-<h3 id="multi-core-cpus-are-still-sequential-in-nature-whats-true">Multi-Core CPUs Are Still "Sequential in Nature". What's True?</h3>
-<ul>
-<li>Each core in a CPU executes instructions sequentially — one instruction at a time.</li>
-<li>But with multiple cores, you can run multiple sequences (threads) in parallel.</li>
-<li>So even though you have parallelism at the thread or process level, CPUs don't do true parallel math operations at the scale or structure that ML needs.</li>
-</ul>
-<h3 id="limitation-for-deep-learning">Limitation for Deep Learning</h3>
-<p>Deep learning tasks (like training neural networks) involve operations like:</p>
-<ul>
-<li>Matrix multiplication</li>
-<li>Dot products</li>
-<li>Tensor reshaping</li>
-</ul>
-<p>These require hundreds of thousands to millions of the same operation done simultaneously.</p>
-<h3 id="cpus-even-multi-core-are-not-designed-for-this-kind-of-massively-parallel-math">CPUs (even multi-core) are not designed for this kind of massively parallel math</h3>
-<ul>
-<li>A 4-core or 8-core CPU can process <strong>4–8 things in parallel</strong>, maybe with 2 threads per core.</li>
-<li>But a GPU can execute tens of thousands of operations in parallel (e.g., NVIDIA A100 has ~70,000 CUDA cores).</li>
-</ul>
-<p><img alt="" src="../img/blog-gpu.png" /></p>
-<h3 id="what-makes-gpu-different-from-cpu">What makes GPU different from CPU?</h3>
-<ul>
-<li>CPUs are designed for general-purpose, flexible, sequential tasks.</li>
-<li>GPUs are designed for highly parallel, repetitive math operations — like those used in graphics rendering and machine learning.</li>
-<li>The key difference lies in architecture: how their transistors are allocated and optimized.</li>
-</ul>
-<p><em>Note : SIMD (Single Instruction, Multiple Data) is a parallel computing technique where a single CPU instruction operates on multiple data points simultaneously</em></p>
-<h3 id="cpu">CPU</h3>
-<p>Optimized for single-thread performance. Large cache, deep pipelines, sophisticated branch prediction.Good at handling many different types of tasks, including ones with a lot of logic.</p>
-<h3 id="gpu_1">GPU</h3>
-<p>Optimized for doing the same math operation on large amounts of data (e.g., multiplying numbers in a matrix).Minimal control logic — more transistors devoted to raw arithmetic operations.Executes thousands of threads in parallel using SIMD architecture.</p>
-<h3 id="why-cant-cpus-just-add-more-cores-like-a-gpu">Why Can't CPUs Just "Add More Cores Like a GPU"?</h3>
-<p>Physical Limits. CPUs are complex: each core has lots of control circuitry, branch prediction, caching, pipelining, etc.This takes up a lot of chip area and power.You can't just fit 1000 CPU cores on a chip — it's too costly, hot, and inefficient.</p>
-<h3 id="matrix-multiplication-is-fundamental-to-machine-learning">Matrix multiplication is fundamental to machine learning</h3>
-<ul>
-<li>CPU: Performs the multiplication row-by-row or chunk-by-chunk.</li>
-<li>GPU: Launches thousands of threads, each doing a small multiplication at the same time.</li>
-</ul>
-<p>This is why training a neural network on a CPU could take hours or days, but on a GPU, it could take minutes.</p>
-<h3 id="assign-the-task-to-gpu">Assign the task to GPU</h3>
-<p>It does not happen automatically. we must explicitly tell the CPU to offload a task to the GPU. The operating system and high-level frameworks know how to offload work to the GPU, but you must write or use library/software that supports GPU offloading</p>
-<h3 id="final-note">Final Note</h3>
-<p>A GPU runs thousands or millions of tasks in parallel, all with the same instruction but on different data. It has thousands of cores, which are less powerful individually than CPU cores but are highly efficient for parallel computing. CPU is designed to perform heavy, sequential tasks. While a multi-core CPU can handle more multitasking than a single-core. But It can not have thousands of cores.A single CPU core is significantly more powerful and performant than a single GPU core.</p></div>
+<h2 id="authentication-vs-authorization">Authentication vs Authorization</h2>
+<p>Authentication verifies the identity of a user or service or anything. Authorization determines what an authenticated user or anything can access to.</p>
+<h2 id="oauth">OAuth</h2>
+<p>OAuth is an open authorization standard. OAuth 2.0 is the latest version of the OAuth protocol. With its token-based approach, It can grant limited permissions to access the resource which user wants to &amp; have access to without the need to sharing passwords every time. Tokens can be easily revoked or expired. This is adding an extra layer of security.</p>
+<p>There are couple of flow types to implement OAuth 2.0,</p>
+<ol>
+<li>Authorization code flow</li>
+<li>Implicit flow</li>
+<li>Resource owner flow</li>
+<li>Client credential flow</li>
+</ol>
+<h2 id="auth-resource-server">Auth &amp; Resource server</h2>
+<p>Before going through these different flows. We have to get some clarity around resource server, auth server.</p>
+<p>Auth server will authenticate the user &amp; issues the tokens. Resource server hosts the actual resource which user wants to access and it trust the auth server &amp; the token provided by the auth server. It validates the token with the help of auth server allow user to access the resources. We should not confuse resource server with users or resource owners.</p>
+<h2 id="1-authorization-code-flow">1. Authorization code flow</h2>
+<p>If a third party web or mobile application wants access the resources from your server, we should choose this flow.</p>
+<h2 id="2-implicit-flow">2. Implicit flow</h2>
+<p>If the application is a purely a client side application(ex: written only in Javascript) and no server side code, then we can use this flow. EX : Outlook or other Mail applications, where it depends only on the resource server and it's doesn't own anything in the backend.</p>
+<h2 id="3-resource-owner-flow">3. Resource owner flow</h2>
+<p>If there's a high level of trust between user and application or application and oauth provider, we can choose this application. If the application is the owner of the resource, we can use this flow.
+Ex: if your company have webapp, mobile app and any other application and all needs to access the same resource and your company owns the oauth server, we can go and use this flow. Here, there's a complete trust between the app and auth server or the app and user.</p>
+<h2 id="4-client-credential-flow">4. Client credential flow</h2>
+<p>If the client is also a backend server, we can go &amp; use this flow.</p>
+<h2 id="open-id-connect">Open ID Connect</h2>
+<p>OpenID Connect or OIDC is an authentication layer built on top of the OAuth 2.0 protocol.</p>
+<blockquote>
+<p><strong>Scope</strong> define the level of access
+<strong>Claims</strong> are the informations about the user that are contained within token
+<strong>Client Id</strong> is an identifier of the application who makes requests to auth server
+<strong>Client Secret</strong> is a confidential key that is used to authenticate the application
+<strong>Redirect URI</strong> used in auth code flow. Once authenticated, redirect the user.
+<strong>Auth Code</strong> temporary code issued in auth code flow. Append in redirect uri
+<strong>grant types</strong> are methods by which client can obtain an access token
+<strong>Access Token</strong> used to gain access to protected resources
+<strong>Refresh Token</strong> used to obtain new access token when current access token expires
+<strong>ID Token</strong> is used in OpenID Connect, contains information about the user.
+<strong>Identity Provider(IdP)</strong> OIDC is a protocol that uses IDPs to authenticate users.</p>
+</blockquote>
+<h2 id="single-sign-onsso">Single Sign-on(SSO)</h2>
+<p>Single Sign-On (SSO) is a user authentication process that allows a user to access multiple applications with one set of credentials.</p>
+<p>Whenever user tries to access resource server, resource server will redirect the user to auth server to authenticate. Since OIDC is the authtication layer on top of oauth, it get the credentials from user &amp; validates it with Identity provider(Idp).</p>
+<p>Upon successful authentication, IdP creates the login session. Once login session created, auth server will respond to the client with ID token &amp; Access token or redirects to resource server with ID token &amp; auth code which will later be exchanged with Access token. It depends on the oauth 2 flow which we implement.</p>
+<h2 id="login-session">Login session</h2>
+<p>Login session will always be created by IdP. Session cookie is tied to the Idp's domain (eg: idp.example.com), not to the resource domains. This happens through browser cookie mechanism. Browser ensures that this cookie is sent only when requests are made to IdP's domain.</p>
+<h2 id="clients-using-multiple-domains">Clients using Multiple domains</h2>
+<p>When user accesses domain A and domain B, the sso flow will redirect to the IdP for authentication or session validation. During this redirect, browser will automatically includes the session cookie.</p>
+<p>IdP will validate the session. If it is a valid session, IdP recognizes that the user is already logged in and authenticated. Based on this, IdP will issue new ID token for the request client domain with out asking to login again. If the session is not valid, It will show login page &amp; get the credentials. Upon successful authentication, IdP creates the login session.</p>
+<h2 id="no-cross-domain-cookie-sharing">No Cross domain cookie sharing</h2>
+<p>Session cookie is never shared directly between domains. Each domain must go through the IdP to check the user's session. Browser ensures that this session cookie is sent only with requests to the IdP's domain.</p>
+<h2 id="auth-resource-are-in-same-domain">Auth &amp; resource are in same domain</h2>
+<p>Lets assume auth &amp; resource are in same domain but have different url path. We can use path based cookie which will make sure that the session cookie will only be sent to requests under that path.</p>
+<h2 id="login-has-no-connection-with-client-application">Login has no connection with client application</h2>
+<p>Once user logged in using IdP, session will be set in browser for that domain &amp; redirects to the client with auth code</p></div>
             </div>
         </div>
 
