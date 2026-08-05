@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/news/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/neural-networks/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>News - Arunkumar Velusamy</title>
+        <title>Neural Networks Demystified - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -66,10 +66,10 @@
                                 <a href="../market-indicators/" class="nav-link">Market Indicators</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
+                                <a href="./" class="nav-link active" aria-current="page">Neural Networks Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">News</a>
+                                <a href="../news/" class="nav-link">News</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
@@ -89,12 +89,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../neural-networks/" class="nav-link">
+                                <a rel="prev" href="../market-indicators/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                <a rel="next" href="../news/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,15 +115,80 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#neural-networks-demystified" class="nav-link">Neural Networks Demystified</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#demand-prediction" class="nav-link">Demand Prediction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#neural-network-layer" class="nav-link">Neural Network Layer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<div class="coming-soon">
-  <h1>News</h1>
-  <p>Coming soon.</p>
-</div></div>
+<h1 id="neural-networks-demystified">Neural Networks Demystified</h1>
+<p><em>Layers, Neurons, Activations, and Forward Propagation</em></p>
+<p><em>By Arunkumar Velusamy · Jan 2026</em></p>
+<hr />
+<p>Computational model inspired by the human brain</p>
+<p>It will be hard to put everything into one single blog. Just want to keep it simple for quick reference. For more details, go to Coursera and watch Advance Learning Algorithms by Andrew ng.</p>
+<h3 id="biological-neuron">Biological Neuron</h3>
+<p><img alt="Biological Neuron" src="../img/blog-neural-networks.png" />
+<em>Biological Neuron</em></p>
+<h3 id="simplified-mathematical-model-of-a-neuron">Simplified Mathematical model of a Neuron</h3>
+<p><img alt="Mathmatical representation of neuron" src="../img/neural-networks-1.png" />
+<em>Mathmatical representation of neuron</em></p>
+<h2 id="demand-prediction">Demand Prediction</h2>
+<p>Let's start with an example</p>
+<p><strong>T-Shirt — Top seller or Not</strong><br />
+Input x is price , Output is the Probablity of being top seller</p>
+<p><img alt="Top seller or not — Demand prediction" src="../img/neural-networks-2.png" />
+<em>Top seller or not — Demand prediction</em></p>
+<p>Output is a probability, ranging from 0–1. Then apply logistic regression to fit sigmoid function to the data. If you want to understand more about sigmod function or logistic regression, <a href="https://medium.com/@arun003.v/supervised-machine-learning-classification-7a7681f9e850">click here &amp; read the previous blog</a></p>
+<p><img alt="logistic regression" src="../img/neural-networks-3.png" />
+<em>logistic regression</em></p>
+<h3 id="represented-using-one-single-neuron">Represented using one single neuron</h3>
+<p><img alt="Single neuron example of Demand prediction" src="../img/neural-networks-4.png" />
+<em>Single neuron example of Demand prediction</em></p>
+<p>Building a neural network just requires a bunch of these newrons and putting or wiring them together.</p>
+<h3 id="expanding-demand-prediction-with-more-features">Expanding Demand prediction with more features</h3>
+<p>T-shirt top-seller prediction with more input features</p>
+<p><img alt="Demand prediction with multiple neurons and features" src="../img/neural-networks-5.png" />
+<em>Demand prediction with multiple neurons and features</em></p>
+<p><strong>Activations</strong>: Afforablity, awareness, perceived quality are the activations of the three neurons in first layer. Probablity is the activation of the neuron in the last layer.<br />
+The term activation comes from biological neurons. Sending many electrical impulses to other neurons / to the downstreams.</p>
+<p><strong>Output layer:</strong> Last layer which gives the final output.</p>
+<p><strong>Input layer</strong>: Input values. Price, shipping cost, Marketting, material quality are the Input layer here.</p>
+<p><strong>Hidden layer:</strong> Layers in the middle. Because these layer are not using the x values from the training set and also not producing y values at the same time.</p>
+<h3 id="simplification">Simplification</h3>
+<p>We had to go through the neurons one at a time and decide what inputs it would take from previous layer.<br />
+Ex: Affordability is a function of just Price and Shipping Cost, Awareness is a function of just marketing and so on.<br />
+In large neural network, It is lot of work to go through each neuron manually and decide which neuron should take which features as inputs.</p>
+<p>So simplified is presented in below image. Each neuron in a layer will have access to every feature, to every value from previous layer.</p>
+<p><img alt="Simplified version demand prediction" src="../img/neural-networks-6.png" />
+<em>Simplified version demand prediction</em></p>
+<p>Affordability will learn to ignore marketing and material quality</p>
+<h3 id="multiple-hidden-layer">Multiple hidden layer</h3>
+<p><img alt="Multiple hidden layer representation" src="../img/neural-networks-7.png" />
+<em>Multiple hidden layer representation</em></p>
+<p>How many hidden layers? and How many neurons in each layer? <strong>Architecture of the neural network</strong> will decide and answer these questions.</p>
+<h2 id="neural-network-layer">Neural Network Layer</h2>
+<p>We just went through what is neurons, layers activations and so on. Now let's go through the logistic regression with each layer and neurons.</p>
+<p><img alt="Neural Network Layer" src="../img/neural-networks-8.png" />
+<em>Neural Network Layer</em></p>
+<p><img alt="First hidden layer in detail" src="../img/neural-networks-9.png" />
+<em>First hidden layer in detail</em></p>
+<p><img alt="Second layer in details" src="../img/neural-networks-10.png" />
+<em>Second layer in details</em></p>
+<h3 id="forward-propagation">Forward Propagation</h3>
+<p>Data pass in forward direction layer by layer in neural network as explained above. This is called Forward Propagation.</p></div>
             </div>
         </div>
 

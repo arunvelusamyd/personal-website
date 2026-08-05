@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/frontend-revisited/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Frontend Revisited - Arunkumar Velusamy</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/profile.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Arunkumar Velusamy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../agent-engineering/" class="nav-link">AI Agent Engineering</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai-frameworks/" class="nav-link">AI Toolbox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ai-terms/" class="nav-link">AI Terms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../apps/" class="nav-link">Apps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../blogs/" class="nav-link">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Frontend Revisited</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gpu/" class="nav-link">GPU?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../machine-learning-get-start/" class="nav-link">Machine Learning — Get start</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../market-indicators/" class="nav-link">Market Indicators</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../news/" class="nav-link">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../requests/" class="nav-link">Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../supervised-machine-learning-classification/" class="nav-link">Supervised Machine Learning — Classification</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../blogs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../gpu/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#frontend-revisited" class="nav-link">Frontend Revisited</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#browsers-progress-over-the-years" class="nav-link">Browser’s progress over the years</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#single-page-application-vs-multi-page-application-vs-micro-frontends" class="nav-link">Single Page application Vs Multi Page Application vs Micro-frontends</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nodejs-vs-node-module-vs-node_modules-folder" class="nav-link">node.js vs node module vs node_modules folder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#npm-registry" class="nav-link">npm registry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-react-app-cra" class="nav-link">Create React App (CRA)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#build-tool-dev-server" class="nav-link">Build tool / dev server</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#react-library-or-framework" class="nav-link">React library or framework</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#other-hints" class="nav-link">Other hints</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#jsx-file" class="nav-link">JSX file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#plain-js-vs-jsx" class="nav-link">Plain JS vs JSX</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hmr-hot-module-replacement" class="nav-link">HMR: Hot Module Replacement</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bundler" class="nav-link">Bundler</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vite-dev-servers" class="nav-link">Vite dev servers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#module-federation" class="nav-link">Module Federation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#homepage-in-packagejson" class="nav-link">homepage in package.json</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#packagejson-vs-package-lockjson" class="nav-link">package.json vs package-lock.json</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#export-with-default-vs-without-default" class="nav-link">Export with default vs without default</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#backend-call-style" class="nav-link">Backend call style</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#es-modulesesm" class="nav-link">ES modules(ESM)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#commonjs-vs-es-modules" class="nav-link">CommonJS vs ES Modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hooks" class="nav-link">Hooks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hooks-usestate" class="nav-link">Hooks: useState</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hooks-useeffect" class="nav-link">Hooks: useEffect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hooks-useeffect_1" class="nav-link">Hooks: useEffect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#other-hooks" class="nav-link">Other Hooks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="frontend-revisited">Frontend Revisited</h1>
+<p><em>A Developer’s Fresh Take on Modules, React, Bundlers and Micro-frontends</em></p>
+<p><em>By Arunkumar Velusamy · May 2026</em></p>
+<hr />
+<h2 id="browsers-progress-over-the-years">Browser’s progress over the years</h2>
+<p>25–30 years ago, browser just opens HTML and reloads entire page for any change… like a document viewer. But it evolved from this.</p>
+<p>When a browser loads HTML, it parses it into a DOM(Document Object Model) tree in memory. It also builds a CSSOM(CSS Object Model) from styles, and combines both into a render tree. JavaScript can modify the DOM at runtime, and the browser efficiently updates only the affected parts of the page through reflow and repaint.</p>
+<p>What Javascript can actually do to a loaded page?</p>
+<ul>
+<li>Modify structure</li>
+<li>Modify styling</li>
+<li>Fetch new data without reloading</li>
+<li>Change the URL without reloading</li>
+<li>Handle real-time data (Web sockets, SSE(Server Sent Events), push notifications)</li>
+<li>Store data locally</li>
+</ul>
+<h2 id="single-page-application-vs-multi-page-application-vs-micro-frontends">Single Page application Vs Multi Page Application vs Micro-frontends</h2>
+<p><strong>SPA (Single-page application)</strong> loads index.html exactly once, and everything after that happens via JavaScript updating the DOM — no full page reloads.</p>
+<p><strong>Multi-page application(MPA)</strong> — Every navigation triggers a full server round-trip that returns a new HTML document.</p>
+<p><strong>Micro frontends</strong> apply microservices philosophy to the frontend. In a micro frontend approach, each section becomes its own app, owned by a separate team, deployed independently, then composed at runtime or build time into a unified user experience.</p>
+<h2 id="nodejs-vs-node-module-vs-node_modules-folder">node.js vs node module vs node_modules folder</h2>
+<ul>
+<li>Node.js is a JavaScript runtime that runs outside the browser.</li>
+<li>A “Node module” (or just “module”) is a reusable piece of JavaScript code — one file, or a package of files, that exports functionality for other code to import.<ul>
+<li>a. Built-in (core) modules</li>
+<li>b. Local modules</li>
+<li>c. Third-party modules (npm packages)</li>
+</ul>
+</li>
+<li>node_modules/ — is the directory where npm installs third-party packages.</li>
+</ul>
+<h2 id="npm-registry">npm registry</h2>
+<p>The npm registry is a public database of JavaScript packages — essentially a giant server that stores published packages and serves them to anyone who runs “npm install”.</p>
+<h2 id="create-react-app-cra">Create React App (CRA)</h2>
+<p>The official zero-config React scaffolding tool — now effectively deprecated. Migrate to Vite (most common path).</p>
+<h2 id="build-tool-dev-server">Build tool / dev server</h2>
+<ul>
+<li><strong>Build tool</strong> — transforms your source code into something browsers can run.</li>
+<li><strong>Dev server</strong> — serves your app locally during development.</li>
+</ul>
+<p>Most modern tools handle both, but they’re separable concerns. Vite is the current default for new projects.</p>
+<p>For instance, App is written in <strong>React</strong> (runtime dep), bundled with <strong>Vite</strong> (dev dep), and uses Vite’s <strong>React plugin</strong> plus the <strong>federation plugin</strong>.</p>
+<h2 id="react-library-or-framework">React library or framework</h2>
+<p>React is a library. Specifically, a UI rendering library. It does one thing: turn state into DOM.</p>
+<h2 id="other-hints">Other hints</h2>
+<p>React is a <strong>runtime library</strong> that runs in the browser (or on a server for SSR(Server Side Rendering))</p>
+<h2 id="jsx-file">JSX file</h2>
+<p>A .jsx file is a JavaScript file that contains JSX syntax — an extension to JavaScript that lets you write HTML-like markup directly inside your code. It’s almost exclusively used with React.<br />
+JSX is neither a React feature nor a JavaScript feature — it’s a separate syntax extension.<br />
+JSX was created by Facebook alongside React (2013), but it’s a standalone syntax specification<br />
+It’s not part of JavaScript (ECMAScript). The JS engine in your browser cannot run JSX directly — it would throw a syntax error.<br />
+It’s not part of React either. React doesn’t know what JSX is at runtime.<br />
+How it actually works? — JSX needs a compiler (Babel, TypeScript, SWC, esbuild) to transform it into plain JavaScript before it runs<br />
+Create React App (CRA), which bundles a preconfigured toolchain:</p>
+<ul>
+<li>Bundler — webpack 5</li>
+<li>JSX/ES compiler — Babel (via babel-loader)</li>
+<li>Babel preset for JSX — <strong>@babel/preset-react</strong></li>
+<li>Babel preset for modern JS — @babel/preset-env</li>
+</ul>
+<h2 id="plain-js-vs-jsx">Plain JS vs JSX</h2>
+<p><strong>Without JSX</strong> (pure JavaScript):</p>
+<pre><code class="language-js">React.createElement('h1', { className: 'title' }, 'Hello')
+</code></pre>
+<p><strong>With JSX</strong>:</p>
+<pre><code class="language-html">&lt;h1 className=&quot;title&quot;&gt;Hello&lt;/h1&gt;
+</code></pre>
+<p>Both produce the same result. JSX gets compiled (by Babel or similar) into React.createElement(...) calls.</p>
+<h2 id="hmr-hot-module-replacement">HMR: Hot Module Replacement</h2>
+<p>Hot Module Replacement (HMR) is a development-only feature. It updates modules in a running application without a full page reload — and critically, without losing application state.</p>
+<p><img alt="" src="../img/blog-frontend-revisited.png" /></p>
+<h2 id="bundler">Bundler</h2>
+<p>A bundler (Webpack, Vite, esbuild, Rollup, Turbopack, Parcel) is a <strong>build-time tool</strong> that runs on your machine or CI before the code ever reaches a browser.</p>
+<h2 id="vite-dev-servers">Vite dev servers</h2>
+<p>three separate Vite dev servers that the browser stitches together at runtime</p>
+<h2 id="module-federation">Module Federation</h2>
+<p>A Webpack 5 feature that lets separately deployed JavaScript applications <strong>share code at runtime</strong> — without bundling everything together at build time.</p>
+<p>In a micro-frontend architecture, you have multiple independent apps. Without module federation</p>
+<ul>
+<li>Each app bundles its own copy of React, lodash, etc. → <strong>massive duplication</strong></li>
+<li>Sharing code means a monorepo or npm package → <strong>tight coupling, slow deploys</strong></li>
+<li>One team can’t update a component without coordinating a release with everyone</li>
+</ul>
+<p>Core Idea is each app can act as:</p>
+<ul>
+<li>A <strong>Host</strong> — consumes code from others at runtime</li>
+<li>A <strong>Remote</strong> — exposes code for others to consume</li>
+<li>Both simultaneously</li>
+</ul>
+<h2 id="homepage-in-packagejson">homepage in package.json</h2>
+<p>CRA uses homepage to derive PUBLIC_URL, which tells the build where assets will live in production.</p>
+<h2 id="packagejson-vs-package-lockjson">package.json vs package-lock.json</h2>
+<ul>
+<li>package.json — your declared intent, written by you, committed, flexible with version ranges.</li>
+<li>package-lock.json — npm’s snapshot of exactly what was installed, auto-generated, always committed, never hand-edited. Every transitive dependency — dependencies of your dependencies — is pinned to an exact version with a checksum.</li>
+</ul>
+<h2 id="export-with-default-vs-without-default">Export with default vs without default</h2>
+<p>There are 3 ways to import</p>
+<ul>
+<li><strong>Default export</strong> — one per module, imported with any name</li>
+<li><strong>Named export</strong> — multiple per module, imported by exact name</li>
+<li><strong>Mix both</strong> — We can Mix Both</li>
+</ul>
+<p>Use <strong>named exports</strong> by default. Reach for a <strong>default export</strong> only when a module has one clear primary thing to export (a class, a React component, a config object) and the name flexibility is genuinely useful.</p>
+<h2 id="backend-call-style">Backend call style</h2>
+<p>goes through an Express proxy (setupProxy.js)<br />
+Direct axios calls to localhost:8010/api/* with bearer token</p>
+<h2 id="es-modulesesm">ES modules(ESM)</h2>
+<p>ES modules (ESM) is the official JavaScript module system, standardized in ES2015 (ES6). It lets you split code across files and share code via import/export.</p>
+<h2 id="commonjs-vs-es-modules">CommonJS vs ES Modules</h2>
+<p>ESM is the future and the standard across browsers and Node.js. CJS is still dominant in the Node ecosystem due to legacy, but new projects should default to ESM.</p>
+<h2 id="hooks">Hooks</h2>
+<p>Think of hooks as a way to attach <strong>persistent state and behavior</strong> to what is otherwise a stateless function.</p>
+<h2 id="hooks-usestate">Hooks: useState</h2>
+<p>The most fundamental hook. It lets a component remember a value across renders.</p>
+<h2 id="hooks-useeffect">Hooks: useEffect</h2>
+<p>Fetching data from an API,Setting up subscriptions (WebSockets, event listeners),Manually manipulating the DOM,Logging &amp; Setting timers.</p>
+<h2 id="hooks-useeffect_1">Hooks: useEffect</h2>
+<p>It lets you cache the result</p>
+<h2 id="other-hooks">Other Hooks</h2>
+<p>useRef, useCallback,useContext, useReducer, useTransition, useDeferredValue, useOptimistic, useFormStatus, useLayoutEffect, useSyncExternalStore</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/menu.js"></script>
+        <script src="../javascripts/email.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

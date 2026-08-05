@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/news/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/supervised-machine-learning-classification/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>News - Arunkumar Velusamy</title>
+        <title>Supervised Machine Learning — Classification - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -69,7 +69,7 @@
                                 <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">News</a>
+                                <a href="../news/" class="nav-link">News</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
@@ -78,7 +78,7 @@
                                 <a href="../requests/" class="nav-link">Requests</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../supervised-machine-learning-classification/" class="nav-link">Supervised Machine Learning — Classification</a>
+                                <a href="./" class="nav-link active" aria-current="page">Supervised Machine Learning — Classification</a>
                             </li>
                         </ul>
 
@@ -89,12 +89,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../neural-networks/" class="nav-link">
+                                <a rel="prev" href="../requests/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,15 +115,98 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#supervised-machine-learning-classification" class="nav-link">Supervised Machine Learning — Classification</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#logistic-regression-classification" class="nav-link">Logistic Regression &amp; Classification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#difference-from-regression" class="nav-link">Difference from Regression?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-this-math-form-for-classification-logistic-regression" class="nav-link">Why this Math Form for Classification? Logistic regression?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#decision-boundary" class="nav-link">Decision Boundary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cost-function-for-logistic-regression" class="nav-link">Cost function for logistic regression</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<div class="coming-soon">
-  <h1>News</h1>
-  <p>Coming soon.</p>
-</div></div>
+<h1 id="supervised-machine-learning-classification">Supervised Machine Learning — Classification</h1>
+<p><em>By Arunkumar Velusamy · Sep 2025</em></p>
+<hr />
+<h2 id="logistic-regression-classification">Logistic Regression &amp; Classification</h2>
+<h3 id="from-sigmoid-functions-to-decision-boundaries">From Sigmoid Functions to Decision Boundaries</h3>
+<p>Classification is about predicting categories or labels, not continuous values. Instead of predicting a number like price (regression), you predict which class something belongs to.</p>
+<h3 id="example-scenarios">Example Scenarios</h3>
+<ul>
+<li>Email → spam or not spam (binary classification)</li>
+<li>Image → cat, dog, or bird (multi-class classification)</li>
+<li>Loan application → approve or reject</li>
+</ul>
+<h2 id="difference-from-regression">Difference from Regression?</h2>
+<p>Regression output is a continuous value. For example, predicting temperature. Classification output is a discrete class.For example, predicting sunny/cloudy/rainy. Classification uses <strong>Logistic Regression</strong> (not linear) whereas Regression uses Linear Regression.</p>
+<p><img alt="" src="../img/blog-supervised-machine-learning-classification.png" /></p>
+<p>Classification uses Sigmoid or logistic function</p>
+<p><img alt="" src="../img/supervised-classification-1.png" /></p>
+<h2 id="why-this-math-form-for-classification-logistic-regression">Why this Math Form for Classification? Logistic regression?</h2>
+<p><img alt="Why this Math Form for Classification? Logistic regression?" src="../img/supervised-classification-2.png" />
+<em>Why this Math Form for Classification? Logistic regression?</em></p>
+<h3 id="probability-range-from-0-to-1">Probability range from 0 to 1</h3>
+<p>In linear regression, we had <strong>f(x)=wx+b</strong>. f(x) could be any real number. This was fine for predicting continuous values like prices or temperature. But in classification we want <strong>probabilities</strong> between 0 to 1. So we need a function that takes any real number(because wx+b can be anything) and squeeze it into [0,1]</p>
+<h3 id="p-wxb">P ≠ wx+b</h3>
+<p>Since classification is a probablity(P) ranges from 0 to 1,<br />
+<strong>P ≠ wx+b</strong>, becauase wx+b could be any real number</p>
+<h3 id="odds-make-probablity-range-01-into-0">odds make probablity range [0,1] into [0,∞]</h3>
+<p><strong>odds = Probability of success / Probability of failure</strong><br />
+Can be written as below,<br />
+<strong>odds = P / 1-P</strong></p>
+<h3 id="logodds-turns-0-into-">log(odds) turns [0,∞] into [-∞,∞]</h3>
+<p>log(p/(1-p)) = wx+b</p>
+<h3 id="why-linearwxb">why linear(wx+b)?</h3>
+<p>Simplicity : linear equation are easy to estimate and interpret<br />
+Flexiblity: after applying the inverse(sigmoid), we get a smooth S-Shaped curve for probablities.<br />
+Efficiency: Solving for w,b becomes an optimization problem with nice properties(convexity)</p>
+<h3 id="so-to-be-keep-it-short">So to be keep it short</h3>
+<p>For a given input x, the output y has to be in between 0 to 1. Sigmoid function will do this.</p>
+<h3 id="now-back-to-school">Now back to school 🙂</h3>
+<p><img alt="" src="../img/supervised-classification-3.png" /></p>
+<h2 id="decision-boundary">Decision Boundary</h2>
+<p>A decision boundary is the line or surface that separates different classes in your input space. It defines where the classifier changes its prediction from one class to another.</p>
+<p>We have,
+- Linear decision boundaries
+- Non-Linear decision boundaries</p>
+<p>No-Linear decision boundaries can be a circle or eclipse or even more complex which does not have any formal shape.</p>
+<h2 id="cost-function-for-logistic-regression">Cost function for logistic regression</h2>
+<p>If we try to use the same MSE(Mean squared error) cost as linear regression for this this sigmod or logistic regression, we will get weird curves with flat regions and optimization becomes harder, sometimes slower.</p>
+<p>In logistic regression, target y is binary(0 or 1), not any real number like in linear regression. So using MSE here is mathematically inconsistent. If <strong>logistic loss</strong>, fast learning, right assumptions.</p>
+<h3 id="loss-function">Loss function</h3>
+<p><img alt="for a single training example" src="../img/supervised-classification-4.png" />
+<em>for a single training example</em></p>
+<p>Simplified version in one equation</p>
+<p><img alt="Simplifies version for a single training example in one equation" src="../img/supervised-classification-5.png" />
+<em>Simplifies version for a single training example in one equation</em></p>
+<p>If you assume y=1 or y=0 and apply in the above equation, you can understand the simplification</p>
+<p>Cost function for logistic regression (for m training sets)</p>
+<p><img alt="Cost function for logistic regression (for m training sets)" src="../img/supervised-classification-6.png" />
+<em>Cost function for logistic regression (for m training sets)</em></p>
+<h3 id="gradient-descent-algorithm">Gradient descent algorithm</h3>
+<p>to find good choice of w &amp; b</p>
+<p>Gradient descent formula of logistic regression look same as linear regression. But the difference is hidden in f(x). f(x) is different for logistic regression.</p>
+<p>End. But Read about overfitting and underfitting</p></div>
             </div>
         </div>
 

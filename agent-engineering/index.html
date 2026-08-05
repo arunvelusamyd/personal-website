@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/news/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/agent-engineering/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>News - Arunkumar Velusamy</title>
+        <title>AI Agent Engineering - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../agent-engineering/" class="nav-link">AI Agent Engineering</a>
+                                <a href="./" class="nav-link active" aria-current="page">AI Agent Engineering</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../ai-frameworks/" class="nav-link">AI Toolbox</a>
@@ -69,7 +69,7 @@
                                 <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">News</a>
+                                <a href="../news/" class="nav-link">News</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
@@ -89,12 +89,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../neural-networks/" class="nav-link">
+                                <a rel="prev" href=".." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                <a rel="next" href="../ai-frameworks/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,15 +115,146 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ai-agent-engineering" class="nav-link">AI Agent Engineering</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#custom-slash-commands" class="nav-link">Custom Slash Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#plan-mode" class="nav-link">Plan mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#checkpoints-rewind" class="nav-link">Checkpoints &amp; Rewind</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#context-compaction" class="nav-link">Context &amp; Compaction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#memory" class="nav-link">Memory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#subagents" class="nav-link">Subagents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#worktrees" class="nav-link">Worktrees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#todowrite" class="nav-link">TodoWrite</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hooks-observe" class="nav-link">Hooks (observe)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cost-usage" class="nav-link">Cost &amp; Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#agentsmd-in-action" class="nav-link">AGENTS.md in Action</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#skillmd" class="nav-link">SKILL.md</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#settings-override" class="nav-link">Settings Override</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mcp" class="nav-link">MCP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rag" class="nav-link">RAG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<div class="coming-soon">
-  <h1>News</h1>
-  <p>Coming soon.</p>
-</div></div>
+<h1 id="ai-agent-engineering">AI Agent Engineering</h1>
+<p><em>Developer Tools, MCP, RAG, and Agentic Patterns with Claude Code</em></p>
+<p><em>By Arunkumar Velusamy · Apr 2026</em></p>
+<hr />
+<p>Slash Commands, Subagents, Hooks,RAG, MCP and etc</p>
+<h2 id="custom-slash-commands">Custom Slash Commands</h2>
+<p>/review-component src/components/Dashboard<br />
+/check-security<br />
+/explain-flow fetching bank portfolio data</p>
+<p>These commands are defined in .claude/commands/ — open them to see how they work.</p>
+<p><img alt="" src="../img/blog-agent-engineering.png" /></p>
+<p><img alt="" src="../img/agent-engineering-1.png" /></p>
+<h2 id="plan-mode">Plan mode</h2>
+<p>/plan Add a new "Insurance" asset type across the entire platform</p>
+<ul>
+<li>Review the plan Claude creates</li>
+<li>Modify it ("skip the frontend changes for now")</li>
+<li>Approve or /exitplan</li>
+</ul>
+<h2 id="checkpoints-rewind">Checkpoints &amp; Rewind</h2>
+<p>You: Add a todo comment to the top of CLAUDE.md<br />
+Claude: [Make the changes]<br />
+you: /rewind<br />
+[select the checkpoint to undo the change]</p>
+<h2 id="context-compaction">Context &amp; Compaction</h2>
+<p>/context<br />
+/compact</p>
+<h2 id="memory">Memory</h2>
+<p>You: Remember that I prefer to see the git diffs before every commit<br />
+You : Remember that our spring ends on April 15 2026<br />
+You: /memory<br />
+[View the saved]</p>
+<h2 id="subagents">Subagents</h2>
+<p>You: Explore how the websocket streaming works end to end<br />
+You: In the background, analyse all bank JSON files for schema consistency</p>
+<h2 id="worktrees">Worktrees</h2>
+<p>You: In a worktree, try adding a "Last Refreshed" timestamp to the portfolio response.<br />
+This runs in isolation. your working directory stays clean</p>
+<h2 id="todowrite">TodoWrite</h2>
+<p>You: I need you to add OCBC as a new bank. Track your progress with tasks.<br />
+Watch claude creat a task list and check items off as it works</p>
+<h2 id="hooks-observe">Hooks (observe)</h2>
+<p>The hooks in .claude/settings.json. When claude modifies a file, you'll see PreToolUse and PostToolUse messages in the output.</p>
+<h2 id="cost-usage">Cost &amp; Usage</h2>
+<p>/cost<br />
+[Sees tokens used and estimated cost for this session]</p>
+<h2 id="agentsmd-in-action">AGENTS.md in Action</h2>
+<p>You: Explore the authentication flow across both frontends<br />
+The spawned agent will follow the instructions in AGENTS.md</p>
+<h2 id="skillmd">SKILL.md</h2>
+<p>Skill is a structured, reusable workflow the agent can execute. Reusable capabilities / workflows. A Skill knows how to deploy a microservice to kubernetes</p>
+<h2 id="settings-override">Settings Override</h2>
+<p>Try modifying .claude/settings.local.json to deny a specific tool:</p>
+<pre><code class="language-json">{
+ &quot;permissions&quot;: {
+ &quot;deny&quot;: [&quot;Bash(git push*)&quot;]
+ }
+}
+</code></pre>
+<p>Then ask Claude to push — it will be blocked.</p>
+<h2 id="mcp">MCP</h2>
+<p>MCP (Model Context Protocol) is an open standard from Anthropic that lets AI assistants connect to external tools, data, and systems through a universal interface — like "USB-C for AI." It uses a client-server architecture where MCP servers expose <strong>tools</strong> (functions to call), <strong>resources</strong> (data), and <strong>prompts</strong> (templates) over JSON-RPC, so any MCP-compatible client (Claude Code, Cursor, etc.) can use any MCP server without custom integrations.</p>
+<h2 id="rag">RAG</h2>
+<p>RAG (Retrieval-Augmented Generation) fetches relevant information from an external knowledge source at query time and feeds it to an LLM as context, so the model can generate answers grounded in up-to-date or private data instead of relying only on its training. The pipeline is: chunk and embed documents into a vector store, then at query time retrieve the most semantically similar chunks and stuff them into the LLM's prompt. It solves hallucinations, stale knowledge, and lack of access to proprietary data without the cost of retraining.</p>
+<h3 id="plugins">Plugins</h3>
+<p>Agent plugins are modular packages that extend AI agents or development environments with reusable skills, hooks, and integrations to automate tasks and enhance functionality</p>
+<h3 id="guardrails">Guardrails</h3>
+<p>Any mechanism that enforces hard boundaries on what AI can do, regardless of what AI thinks it should do.</p>
+<h3 id="human-in-the-loop">Human in the loop</h3>
+<p>Human in the loop (HITL) is another conceptual pattern, not a single feature. It's about where and how a human gets to approve, redirect, or reject what AI is doing during an agentic task.</p></div>
             </div>
         </div>
 

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/news/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/machine-learning-get-start/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>News - Arunkumar Velusamy</title>
+        <title>Machine Learning — Get start - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                                 <a href="../gpu/" class="nav-link">GPU?</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../machine-learning-get-start/" class="nav-link">Machine Learning — Get start</a>
+                                <a href="./" class="nav-link active" aria-current="page">Machine Learning — Get start</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../market-indicators/" class="nav-link">Market Indicators</a>
@@ -69,7 +69,7 @@
                                 <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">News</a>
+                                <a href="../news/" class="nav-link">News</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
@@ -89,12 +89,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../neural-networks/" class="nav-link">
+                                <a rel="prev" href="../gpu/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                <a rel="next" href="../market-indicators/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,15 +115,110 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#machine-learning-get-start" class="nav-link">Machine Learning — Get start</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#linear-regression-gradient-descent" class="nav-link">Linear Regression &amp; Gradient Descent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-problem-are-we-solving" class="nav-link">What Problem Are We Solving?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-linear-regression-to-introduce-machine-learning" class="nav-link">Why Linear Regression to Introduce Machine Learning?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cost-function" class="nav-link">Cost function</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#gradient-descent-algorithm" class="nav-link">Gradient Descent Algorithm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#gradient-descent-algorithm-full-form" class="nav-link">Gradient Descent Algorithm (Full Form)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<div class="coming-soon">
-  <h1>News</h1>
-  <p>Coming soon.</p>
-</div></div>
+<h1 id="machine-learning-get-start">Machine Learning — Get start</h1>
+<p><em>By Arunkumar Velusamy · Jun 2025</em></p>
+<hr />
+<h2 id="linear-regression-gradient-descent">Linear Regression &amp; Gradient Descent</h2>
+<h3 id="the-foundation-of-supervised-machine-learning">The Foundation of Supervised Machine Learning</h3>
+<p>As I progress through the <em>Supervised Machine Learning</em> course by Andrew Ng on Coursera, I wanted to document my understanding of one of the core topics: <strong>Gradient Descent for Linear Regression</strong>.</p>
+<h2 id="what-problem-are-we-solving">What Problem Are We Solving?</h2>
+<p>We’re trying to train a machine learning model that predicts a numerical output y from an input x, using a <strong>straight line</strong>:</p>
+<p><em>f(x)=wx+b</em></p>
+<p>Where, w is the slope (weight), b is the y-intercept (bias).</p>
+<p>This is a linear function. we can have multivariable linear regression also to represent line. This is to represent a simple function which take input and give output.</p>
+<p>The goal is to <strong>find the best values of w and b</strong> that minimize the difference between predicted values and actual values from the <strong>training data</strong>.</p>
+<h2 id="why-linear-regression-to-introduce-machine-learning">Why <strong>Linear Regression</strong> to Introduce Machine Learning?</h2>
+<p>It’s Simple Yet Powerful.Linear regression uses a <strong>straight line</strong> to predict outputs based on inputs.It’s easy to visualize and understand.</p>
+<p><em>f(x)=wx+b</em></p>
+<p>Supervised machine learning <strong>doesn’t have to be a straight line</strong> at all. It can be different as well. The <strong>core idea</strong> of supervised learning is learning a function that maps inputs x to outputs y using labeled training data.Straight Line (Linear Regression) is Just One Case.</p>
+<p>Linear regression is like <strong>learning to ride a tricycle</strong> before you jump on a motorbike — it teaches you the balance of ML concepts in a friendly and intuitive way.</p>
+<h2 id="cost-function">Cost function</h2>
+<p>Cost function tells machine how wrong its predictions are. So it knows how to improve. The most common cost function is <strong>Mean Squared Error (MSE),</strong> given below J(w,b).</p>
+<p><img alt="" src="../img/blog-machine-learning-get-start.png" /></p>
+<h3 id="why-do-we-need-a-cost-function">Why Do We Need a Cost Function?</h3>
+<p>You give the model some data. Inputs x and correct outputs (labels) y. It learns a function f(x) that predicts y from x. Now, how do we know if our model is <strong>good or bad</strong> at this job?</p>
+<p>That’s where the <strong>cost function</strong> comes in. Just look at the above formula J(w,b) once again.</p>
+<p>m is the number of training data. f(x) is the model prediction. y is the actual output. So it is just average of all squared prediction errors.</p>
+<h3 id="why-square-error">Why square error?</h3>
+<p>Makes all errors positive (so they don’t cancel out)<br />
+Punishes large errors more harshly</p>
+<h3 id="why-do-we-minimize-the-cost">Why Do We Minimize the Cost?</h3>
+<p>Because a <strong>lower cost = better predictions</strong>.</p>
+<p>So, Cost function is a formula to measure model error.</p>
+<h3 id="why-are-we-dividing-by-2-again">Why are we dividing by 2 again?</h3>
+<p>It’s mostly for <strong>mathematical convenience</strong>. To cancel out the 2 from the derivative of the square term.</p>
+<p>Does it change the learning? Nope — just makes math cleaner<br />
+Is it required? — No, but it’s convention — most people do it for convenience</p>
+<h2 id="gradient-descent-algorithm">Gradient Descent Algorithm</h2>
+<p>Gradient Descent is an algorithm that helps your model <strong>learn by adjusting the parameters</strong> (like weights w, bias b) to <strong>minimize the cost function</strong>.</p>
+<h3 id="why-gradient-descent">Why Gradient Descent?</h3>
+<p>If we keep applying values for parameters one after another, somewhere we will get the minimum value of mean squared error. So why do we need any algorithm such as gradient descent?</p>
+<p>If we apply different value for w and b , we will continur to find low cost value. But How many value we can try applying for w and b. It is infinite(like 0, 0.1, 0.01,…, 1, .. infinity). It is like trying every grain of sand on a beach to find the one with a smiley face on it. Imagine a neural network with millions of parameters. not feasible to try them all.</p>
+<p><strong>Instead of searching Blindly,</strong> gradient descent uses calculus to look at the slope of the cost function &amp; say “This cost is decresing most rapidly in this direction- let’s go that way”</p>
+<ul>
+<li><strong>Brute force:</strong> Wandering randomly through a forest.</li>
+<li><strong>Gradient Descent:</strong> Using a compass and GPS to head downhill with purpose.</li>
+</ul>
+<p><img alt="" src="../img/ml-get-start-1.png" /></p>
+<p>Where,</p>
+<p><img alt="" src="../img/ml-get-start-2.png" /></p>
+<h3 id="derivative-with-respect-to-w">Derivative with respect to w:</h3>
+<p><img alt="" src="../img/ml-get-start-3.png" /></p>
+<h3 id="derivative-with-respect-to-b">Derivative with respect to b:</h3>
+<p><img alt="" src="../img/ml-get-start-4.png" /></p>
+<h2 id="gradient-descent-algorithm-full-form">Gradient Descent Algorithm (Full Form)</h2>
+<p><strong>Initialize</strong>: w=0, b=0(or random small numbers)<br />
+<strong>Repeat</strong> (for many steps):</p>
+<ul>
+<li>Compute the partial deriv</li>
+<li>Update parameters</li>
+</ul>
+<p><img alt="" src="../img/ml-get-start-5.png" /></p>
+<p>After each update w and b should get slightly better.</p>
+<p>The learning rate α(alphaα) is <strong>a number that controls how big the steps</strong> are during gradient descent.It is <strong>NOT calculated</strong> from a formula based on the data.you have to <strong>choose it yourself</strong>.</p>
+<p>Finding a good α(alphaα) is far easier than brute-forcing all possible w and b values. You don’t need the <em>perfect</em> α(alphaα), just one that’s <em>good enough</em> to reach convergence. In many problems, a wide range of α\alphaα values will work fine. This is the same idea as: Even though there’s no perfect cooking temperature, you can still bake a cake if you’re in the right range (say 170–180°C).</p>
+<p>Think of this move like <strong>delegating a hard task</strong> to a reliable helper:</p>
+<ul>
+<li>The original search space is massive and chaotic.</li>
+<li>Gradient descent takes care of the hard navigation.</li>
+<li>Your job becomes: pick a reasonable speed for the helper (i.e., α(alphaα)).</li>
+</ul>
+<p>That’s a good trade-off in almost all real-world cases.</p>
+<p><a href="https://medium.com/@arun003.v/regression-with-multiple-input-variables-926408bbe91c">Read the next blog</a> to continue further on the related topics</p></div>
             </div>
         </div>
 

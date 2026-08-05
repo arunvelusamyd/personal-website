@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/news/">
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/regression-with-multiple-input-variables/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>News - Arunkumar Velusamy</title>
+        <title>Multiple Linear Regression - Arunkumar Velusamy</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -69,10 +69,10 @@
                                 <a href="../neural-networks/" class="nav-link">Neural Networks Demystified</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">News</a>
+                                <a href="../news/" class="nav-link">News</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../regression-with-multiple-input-variables/" class="nav-link">Multiple Linear Regression</a>
+                                <a href="./" class="nav-link active" aria-current="page">Multiple Linear Regression</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../requests/" class="nav-link">Requests</a>
@@ -89,12 +89,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../neural-networks/" class="nav-link">
+                                <a rel="prev" href="../news/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regression-with-multiple-input-variables/" class="nav-link">
+                                <a rel="next" href="../requests/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,15 +115,115 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#multiple-linear-regression" class="nav-link">Multiple Linear Regression</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#multiple-feature" class="nav-link">Multiple feature</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vectors" class="nav-link">Vectors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vectorization-vector-operation" class="nav-link">Vectorization (Vector Operation)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#feature-scaling" class="nav-link">Feature scaling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#checking-gradient-decent-for-convergence" class="nav-link">Checking gradient decent for convergence</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#choosing-the-learning-rate" class="nav-link">Choosing the learning rate</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#feature-engineering" class="nav-link">Feature engineering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#polynomial-regression" class="nav-link">Polynomial regression</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<div class="coming-soon">
-  <h1>News</h1>
-  <p>Coming soon.</p>
-</div></div>
+<h1 id="multiple-linear-regression">Multiple Linear Regression</h1>
+<p><em>Vectorization, Feature Scaling, and Polynomial Regression</em></p>
+<p><em>By Arunkumar Velusamy · Jul 2025</em></p>
+<hr />
+<p><a href="https://medium.com/@arun003.v/machine-learning-get-start-b6db7076e7ad">Read the previous blog</a> before start this</p>
+<h2 id="multiple-feature">Multiple feature</h2>
+<p>When you started having multiple features, your function will become bigger. For example, To predict house price, we can use the features, size of the house, number of bedrooms,size of the area, number year old, number of floors and etc. your function will be like,</p>
+<p><img alt="" src="../img/blog-regression-with-multiple-input-variables.png" /></p>
+<h2 id="vectors">Vectors</h2>
+<p>We can use vector representation to write the above equation in simple. Below is single training example with multiple features</p>
+<p><img alt="" src="../img/regression-1.png" /></p>
+<h2 id="vectorization-vector-operation">Vectorization (Vector Operation)</h2>
+<p>Instead of doing math one number at a time (scalar operations), you can operate on the <strong>entire vector</strong> at once.</p>
+<h3 id="why-is-this-faster-parallelization">Why Is This Faster? Parallelization!</h3>
+<p>Your <strong>CPU</strong> (and even more so, your <strong>GPU</strong>) is designed to do operations on <strong>multiple numbers at once</strong><br />
+CPUs use <strong>SIMD</strong> (Single Instruction, Multiple Data)<br />
+GPUs take this to the extreme — Thousands of cores handle huge vectors/matrices in <strong>parallel</strong>.<br />
+NumPy, PyTorch ,TensorFlow, Scikit-learn uses vectorization</p>
+<h3 id="gradient-descent-where-it-benefits">Gradient Descent: Where It Benefits</h3>
+<ul>
+<li>Computing predictions <code>f(x) = w^T x + b</code></li>
+<li>Computing the cost function</li>
+<li>Computing gradients for <strong>all training examples</strong> in one shot (batch gradient descent)</li>
+<li>Updating weights</li>
+</ul>
+<p>All of these can be <strong>fully vectorized</strong> — meaning no for loops, just <strong>matrix math</strong>.</p>
+<h2 id="feature-scaling">Feature scaling</h2>
+<p>Feature scaling means transforming the input features (your x values) so that they are on a similar scale — usually:</p>
+<ul>
+<li>Mean around <strong>0</strong></li>
+<li>Values roughly between <strong>-1 and 1</strong>, or <strong>0 and 1</strong></li>
+</ul>
+<h2 id="checking-gradient-decent-for-convergence">Checking gradient decent for convergence</h2>
+<p>To check if gradient descent is converging:</p>
+<ul>
+<li>Plot the cost function vs iterations — it should decrease and flatten out.</li>
+<li>Monitor the change in cost — stop if it changes very little (e.g., &lt; 1e-6).</li>
+<li>Check if gradients are near zero — means you've reached a minimum.</li>
+<li>If cost is oscillating or increasing, the learning rate may be too high<strong>.</strong></li>
+</ul>
+<h2 id="choosing-the-learning-rate">Choosing the learning rate</h2>
+<p>Choosing the right learning rate (α) is key in gradient descent — too small makes learning slow, too large makes it unstable or diverge. Start with a moderate value like 0.01 and adjust based on how the cost function behaves. Plotting cost vs iterations helps you fine-tune it.</p>
+<h2 id="feature-engineering">Feature engineering</h2>
+<p>Feature engineering is the process of transforming raw data into meaningful inputs (features) that help a machine learning model learn better and perform better.</p>
+<p>In simple terms, <em>You take your raw data, apply your domain knowledge, and create features that highlight the most important patterns for the model.</em></p>
+<h3 id="key-types-of-feature-engineering-tasks">Key Types of Feature Engineering Tasks</h3>
+<ul>
+<li>Feature Creation</li>
+<li>Feature Transformation</li>
+<li>Feature Encoding</li>
+<li>Feature Selection</li>
+</ul>
+<p>Some of the common mistakes to avoid,</p>
+<ul>
+<li>Overengineering: Too many features may cause overfitting.</li>
+<li>Data leakage: Creating features that unintentionally use future or target information.</li>
+<li>Ignoring domain knowledge: Some insights only make sense if you understand the business context.</li>
+</ul>
+<h2 id="polynomial-regression">Polynomial regression</h2>
+<p>let you fit curves, non-linear functions, to your data.</p>
+<h3 id="why-use-polynomial-regression">Why Use Polynomial Regression?</h3>
+<p>Sometimes, data doesn't follow a straight line. For example:</p>
+<ul>
+<li>Predicting housing prices might involve nonlinear patterns (e.g., prices rise rapidly after a threshold size).</li>
+<li>Modelling growth curves or demand trends over time.</li>
+</ul>
+<p>A straight line can underfit, but a polynomial curve can capture more complex patterns.</p></div>
             </div>
         </div>
 
