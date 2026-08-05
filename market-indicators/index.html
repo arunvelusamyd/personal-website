@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://arunvelusamyd.github.io/personal-website/market-indicators/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Market Indicators - Arunkumar Velusamy</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/profile.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Arunkumar Velusamy</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Market Indicators</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#market-indicators" class="nav-link">Market Indicators</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#index" class="nav-link">Index</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-fms-bofa-global-fund-manager-survey" class="nav-link">1. FMS — BofA Global Fund Manager Survey</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-aaii-investor-sentiment-survey" class="nav-link">2. AAII Investor Sentiment Survey</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-m2-money-supply" class="nav-link">3. M2 Money Supply</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-market-cap-to-gdp-ratio-buffett-indicator" class="nav-link">4. Market Cap to GDP Ratio (Buffett Indicator)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-shiller-cape-ratio" class="nav-link">5. Shiller CAPE Ratio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-cnn-fear-greed-index" class="nav-link">6. CNN Fear &amp; Greed Index</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-fiscal-deficit" class="nav-link">7. Fiscal Deficit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-current-account-deficit" class="nav-link">8. Current Account Deficit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-trade-deficit" class="nav-link">9. Trade Deficit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-practical-takeaway-on-the-three-deficits" class="nav-link">10. Practical Takeaway on the Three Deficits</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11-inflation" class="nav-link">11. Inflation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#12-unemployment" class="nav-link">12. Unemployment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#13-inflation-unemployment-combined-misery-index" class="nav-link">13. Inflation &amp; Unemployment Combined — Misery Index</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#14-yield-curve" class="nav-link">14. Yield Curve</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#15-high-yield-credit-spreads" class="nav-link">15. High-Yield Credit Spreads</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#16-putcall-ratio" class="nav-link">16. Put/Call Ratio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#17-financial-stress-index" class="nav-link">17. Financial Stress Index</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#18-percentage-of-stocks-above-200-day-moving-average" class="nav-link">18. Percentage of Stocks Above 200-Day Moving Average</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#19-us-gdp-growth-stock-market-impact" class="nav-link">19. US GDP Growth &amp; Stock Market Impact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#20-stagflation" class="nav-link">20. Stagflation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#21-number-of-new-issues-ipos-in-market" class="nav-link">21. Number of New Issues (IPOs) in Market</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#summary-table-updated-july-2026" class="nav-link">Summary Table — Updated July 2026</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="market-indicators">Market Indicators</h1>
+<p><em>This is just an attempt at writing… raw notes used to play around with AI models — weekend reading material on markets.</em></p>
+<p><em>By Arunkumar Velusamy · June 2026</em></p>
+<hr />
+<h2 id="index">Index</h2>
+<ol>
+<li><a href="#1-fms--bofa-global-fund-manager-survey">FMS — BofA Global Fund Manager Survey</a></li>
+<li><a href="#2-aaii-investor-sentiment-survey">AAII Investor Sentiment Survey</a></li>
+<li><a href="#3-m2-money-supply">M2 Money Supply</a></li>
+<li><a href="#4-market-cap-to-gdp-ratio-buffett-indicator">Market Cap to GDP Ratio (Buffett Indicator)</a></li>
+<li><a href="#5-shiller-cape-ratio">Shiller CAPE Ratio</a></li>
+<li><a href="#6-cnn-fear--greed-index">CNN Fear &amp; Greed Index</a></li>
+<li><a href="#7-fiscal-deficit">Fiscal Deficit</a></li>
+<li><a href="#8-current-account-deficit">Current Account Deficit</a></li>
+<li><a href="#9-trade-deficit">Trade Deficit</a></li>
+<li><a href="#10-practical-takeaway-on-the-three-deficits">Practical Takeaway on the Three Deficits</a></li>
+<li><a href="#11-inflation">Inflation</a></li>
+<li><a href="#12-unemployment">Unemployment</a></li>
+<li><a href="#13-inflation--unemployment-combined--misery-index">Inflation &amp; Unemployment Combined — Misery Index</a></li>
+<li><a href="#14-yield-curve">Yield Curve</a></li>
+<li><a href="#15-high-yield-credit-spreads">High-Yield Credit Spreads</a></li>
+<li><a href="#16-putcall-ratio">Put/Call Ratio</a></li>
+<li><a href="#17-financial-stress-index">Financial Stress Index</a></li>
+<li><a href="#18-percentage-of-stocks-above-200-day-moving-average">Percentage of Stocks Above 200-Day Moving Average</a></li>
+<li><a href="#19-us-gdp-growth--stock-market-impact">US GDP Growth &amp; Stock Market Impact</a></li>
+<li><a href="#20-stagflation">Stagflation</a></li>
+<li><a href="#21-number-of-new-issues-ipos-in-market">Number of New Issues (IPOs) in Market</a></li>
+<li><a href="#summary-table--may-2026-indicators">Summary Table — May 2026 Indicators</a></li>
+</ol>
+<hr />
+<h2 id="1-fms-bofa-global-fund-manager-survey">1. FMS — BofA Global Fund Manager Survey</h2>
+<p><strong>Definition:</strong> Monthly survey polling institutional investors about portfolio positioning.</p>
+<p><strong>Key Concept — Contrarian Indicator:</strong>
+- Low cash (&lt;4%) = fully invested, bullish → historically a <em>sell signal</em>
+- High cash (&gt;5%) = scared, hoarding → historically a <em>buy signal</em></p>
+<p><strong>May 2026 Data:</strong>
+- Cash levels: 3.9% (down from 4.3% in April)
+- Biggest monthly drop since February 2024
+- Equity allocations: net 50% overweight
+- Bull &amp; Bear Indicator: 7.8
+- Triggered sell signal for global equities</p>
+<p><strong>Historical Track Record (24 signals since 2011):</strong>
+- Median 4-week loss: -1%
+- Worst outcome: -29% (likely COVID March 2020)
+- Best outcome: +4%
+- Range: -29% to +4%</p>
+<p><strong>Conclusion:</strong> Slight bearish lean, but weak edge; useful as a risk flag rather than a reliable predictor.</p>
+<hr />
+<h2 id="2-aaii-investor-sentiment-survey">2. AAII Investor Sentiment Survey</h2>
+<p><strong>Definition:</strong> Polls retail investors weekly on bullish/bearish sentiment.</p>
+<p><strong>Historical Averages:</strong>
+- Bullish: 37.5%
+- Neutral: 31.5%
+- Bearish: 31.0%</p>
+<p><strong>May 27, 2026 Reading:</strong>
+- Bullish: 35.6% (up 3.8 points)
+- Neutral: 22.6% (down 2.1 points)
+- Bearish: 41.9% (down 1.8 points)
+- Bull-bear spread: -6.3 points (bearish)</p>
+<hr />
+<h2 id="3-m2-money-supply">3. M2 Money Supply</h2>
+<p><strong>Definition:</strong> Includes physical cash, checking accounts, savings accounts, money market accounts, and small time deposits.</p>
+<p><strong>April 2026 Data:</strong>
+- US M2 Supply: $22,804.50 billion
+- Year-over-year growth: 4.72%
+- <strong>Signal:</strong> 4.7% YoY growth = generally bullish</p>
+<p><strong>Historical Context:</strong>
+- 2020–2021 COVID stimulus: 25–40% growth (accompanied stock rally)
+- 2022–2023 quantitative tightening: negative growth, peaked at -8.36% in November 2023 (equity/bond drawdowns)</p>
+<hr />
+<h2 id="4-market-cap-to-gdp-ratio-buffett-indicator">4. Market Cap to GDP Ratio (Buffett Indicator)</h2>
+<p><strong>Late May 2026 Data:</strong>
+- Indicator: 235% (record high)
+- Annualized US GDP: ~$31.82 trillion
+- Total US stock market value: ~$75.05 trillion
+- Calculation: $75.05T / $31.82T = 235.9%</p>
+<p><strong>Historical Context:</strong>
+- Long-term average: ~163%
+- Median: ~81%
+- Typical historical range: 133–194%
+- Current reading: "strongly overvalued"</p>
+<p><strong>Limitations:</strong> International revenue inflates market cap; interest rates affect fair valuation; described as a "weather pattern, not a trigger."</p>
+<hr />
+<h2 id="5-shiller-cape-ratio">5. Shiller CAPE Ratio</h2>
+<p><strong>Definition:</strong> Current S&amp;P 500 price divided by the average of 10 years of inflation-adjusted earnings.</p>
+<p><strong>Current Data:</strong>
+- CAPE: well above 40
+- Multiple of historical average: 2.4×</p>
+<p><strong>Historical Context:</strong>
+- Only two instances above 40:
+  - December 1999 (dot-com peak): 44.19 — followed by ~50% loss over 2.5 years
+  - Current (2026)</p>
+<p><strong>Key Point:</strong> Not a crash predictor. Valuations can stay elevated for years.</p>
+<hr />
+<h2 id="6-cnn-fear-greed-index">6. CNN Fear &amp; Greed Index</h2>
+<p><strong>Current Reading (May 2026):</strong> 60 — Greed zone</p>
+<p><strong>Scale Breakdown:</strong>
+- Extreme Fear: 0–25
+- Fear: 25–45
+- Neutral: 45–55
+- Greed: 55–75
+- Extreme Greed: 75–100</p>
+<hr />
+<h2 id="7-fiscal-deficit">7. Fiscal Deficit</h2>
+<p><strong>Definition:</strong> Government expenditure exceeds revenue; represents needed borrowing.</p>
+<p><strong>FY 2026 Data (through April):</strong>
+- Cumulative deficit: $955 billion
+- Full-year Treasury estimate: $2.1 trillion
+- Market participant estimate: ~$2.0 trillion
+- Prior year: &gt;$1.8 trillion</p>
+<p><strong>As Percentage of GDP:</strong>
+- Current: 6%+ (GDP ~$30 trillion)
+- Target: 3%
+- Multiple: 2× target</p>
+<p><strong>Debt Metrics:</strong>
+- Total accumulated debt: $28.6 trillion
+- Debt-to-GDP: &gt;100% (passed March 2026)
+- Interest spending: on track to exceed $1 trillion this year</p>
+<p><strong>Market Impact:</strong> Affects markets primarily through bonds; large deficits push up long-term yields (10-year, 30-year).</p>
+<hr />
+<h2 id="8-current-account-deficit">8. Current Account Deficit</h2>
+<p><strong>Definition:</strong> When spending on foreign goods/services exceeds income from foreign sources.</p>
+<p><strong>Q4 2025 Data (released March 25, 2026):</strong>
+- Latest deficit: $190.7 billion
+- Change: narrowed by $48.4 billion (20.2% reduction)
+- As % of GDP: 2.4% (down from 3.1% in Q3)
+- Prior period (Q3 2025): 3.1% of GDP</p>
+<p><strong>Next update:</strong> June 24, 2026</p>
+<p><strong>Market Impact:</strong> Matters through the dollar and foreign capital flows; narrowing to 2.4% of GDP "generally read as a stabilising sign."</p>
+<hr />
+<h2 id="9-trade-deficit">9. Trade Deficit</h2>
+<p><strong>Definition:</strong> Imports exceed exports of goods and services.</p>
+<p><strong>March 2026 Data:</strong>
+- Goods-and-services deficit: $60.3 billion
+- Change from February: up $2.5 billion
+- February reading: $57.8 billion
+- Goods deficit: $88.7 billion
+- Services surplus: $28.4 billion</p>
+<p><strong>Market Impact:</strong> "Weak and often counterintuitive" link to stocks; widening often reflects healthy domestic demand; policy (tariffs) matters more than the headline number.</p>
+<hr />
+<h2 id="10-practical-takeaway-on-the-three-deficits">10. Practical Takeaway on the Three Deficits</h2>
+<p>The fiscal deficit's effect on rates is most closely watched by equity markets. Trade and current account deficits signal growth, dollar strength, and policy direction rather than directly driving prices. Markets price expectations ahead of time, so <em>surprises</em> versus forecasts matter most.</p>
+<hr />
+<h2 id="11-inflation">11. Inflation</h2>
+<p><strong>Target Benchmark:</strong> 2% (explicit Fed target)</p>
+<p><strong>April 2026 Data:</strong>
+- Annual CPI: 3.8% (highest since May 2023)
+- Prior month (March): 3.3%
+- Core CPI (ex-food, energy): 2.8% annually
+- Energy costs: jumped 17.9% annually (steepest since September 2022)</p>
+<p><strong>Driver:</strong> Oil shock from Iran war; gasoline prices rose sharply.</p>
+<p><strong>Market Response Logic:</strong> Markets care less about the inflation number itself, more about its implications for interest rates and corporate earnings.</p>
+<p><strong>Effects of Hot Inflation:</strong>
+- Central banks keep rates high or raise them
+- Raises the discount rate for future earnings (compresses valuations, hits tech hardest)
+- Makes bonds/cash more attractive, pulls money from equities
+- Squeezes profit margins directly</p>
+<hr />
+<h2 id="12-unemployment">12. Unemployment</h2>
+<p><strong>April 2026 Data:</strong>
+- Unemployment rate: 4.3% (unchanged)
+- Number unemployed: 7.4 million (little change)
+- Nonfarm payrolls: +115,000 (down from 185,000 in March)
+- Forecast was 55,000 — actual beat forecast</p>
+<p><strong>Context:</strong> "Uncomfortable combination of rising inflation alongside softening labor market."</p>
+<p><strong>NAIRU (Natural Rate):</strong> Estimated 4.0–4.5% for the US.</p>
+<p><strong>Market Implications:</strong>
+- Low unemployment: strong economy, healthy spending (good for revenue)
+- Too-low unemployment: wage inflation, feeds back into the inflation problem
+- Rising unemployment: weak demand (bad for earnings), but sometimes rallies markets (rate-cut room)</p>
+<hr />
+<h2 id="13-inflation-unemployment-combined-misery-index">13. Inflation &amp; Unemployment Combined — Misery Index</h2>
+<p><strong>Current Misery Index:</strong>
+- Formula: Inflation rate + Unemployment rate
+- Current: 3.8% + 4.3% = <strong>8.1</strong>
+- Interpretation: "Isn't alarming, but not firing on all cylinders"</p>
+<p><strong>Historical Context:</strong>
+- Under 8: comfortable
+- Low single digits: great
+- Late 1970s stagflation: 20s</p>
+<p><strong>"Goldilocks" Economy Goal:</strong> ~2% inflation AND ~4% unemployment simultaneously.</p>
+<hr />
+<h2 id="14-yield-curve">14. Yield Curve</h2>
+<p><strong>Definition:</strong> A line plotting interest rates of bonds with the same credit quality but different maturities (typically US Treasuries, from months to 30 years).</p>
+<p><strong>Three Types:</strong>
+1. <strong>Normal (upward-sloping):</strong> longer-term bonds pay higher rates — typical
+2. <strong>Inverted (downward-sloping):</strong> short-term yields higher than long-term — unusual, historically precedes recessions
+3. <strong>Flat:</strong> short and long roughly equal — transition/uncertainty</p>
+<p><strong>May 22, 2026 Data:</strong>
+- 2-year Treasury: ~4.12%
+- 10-year Treasury: ~4.67%
+- 30-year Treasury: ~5.18%
+- 10-2 spread: 0.43 (positive; long-run median ~0.79)
+- <strong>Status:</strong> Normal/upward-sloping curve</p>
+<p><strong>Price and Yield Seesaw Mechanics:</strong>
+- Bond's fixed $50 payout never changes
+- High demand drives price up (say, $1,050)
+- Buyer pays more for the same payout → yield drops</p>
+<p><strong>Supply and Demand:</strong>
+- Short end: Fed pins directly via Federal Funds Rate (e.g., 5.5%)
+- Long end: Market determines via buying pressure</p>
+<p><strong>Inversion Mechanism — Banking Sector:</strong>
+- Banks borrow short, lend long
+- Inversion: costs more to borrow than they earn by lending
+- Result: tightened lending standards, credit crunch</p>
+<p><strong>Why It Predicts Recessions:</strong>
+- Forecast signal: bond market says "rates too high to sustain; slowdown coming"
+- Self-fulfilling: chokes lending, slows economy
+- Historical track record: inverted before nearly every US recession since the 1950s, typically 6–18 months ahead</p>
+<p><strong>Impact on Stock Market:</strong>
+- High 10-year yields (4.7%+) raise the bar for equity ownership
+- Higher rates lower the present value of future earnings (tech/high-growth hit hardest)
+- More expensive borrowing/refinancing for companies (margins, small-caps, rate-sensitive sectors)</p>
+<hr />
+<h2 id="15-high-yield-credit-spreads">15. High-Yield Credit Spreads</h2>
+<p><strong>Definition:</strong> Extra yield demanded to hold risky ("junk") corporate bonds versus safe government bonds.</p>
+<p><strong>Benchmark:</strong> ICE BofA US High Yield Index option-adjusted spread (OAS)</p>
+<p><strong>May 2026 Reading:</strong>
+- Spread: 2.72% (272 basis points)
+- Context: &lt;300 bps = tight/calm; crisis periods &gt;1,000 bps</p>
+<p><strong>Interpretation:</strong> "Quite tight by historical standards" — signals investor confidence in credit conditions.</p>
+<hr />
+<h2 id="16-putcall-ratio">16. Put/Call Ratio</h2>
+<p><strong>Definition:</strong> Volume of put options (bets price falls) against call options (bets price rises).</p>
+<p><strong>Interpretation:</strong>
+- Above 1.0: bearish sentiment
+- Below 0.7: generally considered bullish
+- Recalculated daily from options volume</p>
+<p><strong>Data Source:</strong> CBOE total put/call ratio (market-daily, intraday updates ~25–30 min delayed).</p>
+<hr />
+<h2 id="17-financial-stress-index">17. Financial Stress Index</h2>
+<p><strong>Definition:</strong> Daily market-based snapshot of stress in global financial markets (OFR Financial Stress Index by the US Treasury's Office of Financial Research).</p>
+<p><strong>Methodology:</strong> Built from 33 financial market variables (spreads, valuations, rates).</p>
+<p><strong>Scale:</strong> Zero = normal; positive = above-average stress; negative = below-average stress.</p>
+<p><strong>Components:</strong> Five categories — credit, equity valuation, funding, safe assets, volatility. Regional breakdown: US, other advanced economies, emerging markets.</p>
+<p><strong>Late April 2026 Reading:</strong> -1.97 (well below average, markets calm)</p>
+<p><strong>Historical Context:</strong>
+- All-time high: 10.266 (March 19, 2020)
+- Record low: -4.364 (February 12, 2021)</p>
+<hr />
+<h2 id="18-percentage-of-stocks-above-200-day-moving-average">18. Percentage of Stocks Above 200-Day Moving Average</h2>
+<p><strong>Definition:</strong> Share of stocks in an index (usually S&amp;P 500) trading above their own 200-day moving average.</p>
+<p><strong>Ticker:</strong> $S5TH (S&amp;P 500) on most platforms; variants: 50-day, 150-day.</p>
+<p><strong>Interpretation Ranges:</strong>
+- Above 70–80%: broad, healthy participation (can signal overbought when stretched)
+- 50–70% (current): mixed/moderate; index at highs but &lt;60% of names confirming
+- Below 30–40%: weak breadth, corrections/bear phases</p>
+<hr />
+<h2 id="19-us-gdp-growth-stock-market-impact">19. US GDP Growth &amp; Stock Market Impact</h2>
+<p><strong>Q1 2026 Data:</strong>
+- Real GDP annualized rate: 1.6%
+- Assessment: "Sluggish but not recessionary"</p>
+<p><strong>Benchmark for Healthy US Economy:</strong> ~2% per year in real (inflation-adjusted) terms</p>
+<p><strong>Growth Ranges:</strong>
+- Below ~1%: sluggish, recession risk
+- ~1.8–2.5%: healthy "Goldilocks" zone
+- 3%+: strong, can stoke inflation if sustained
+- Negative two consecutive quarters: informal recession marker</p>
+<p><strong>Optimal for Stocks:</strong> Not necessarily the highest growth. Markets favor a moderate "sweet spot" of ~2–3% real growth because:
+- Strong enough for rising earnings
+- Not so hot as to force Fed rate hikes
+- Very high growth (4–5%) triggers inflation/tightening fears</p>
+<p><strong>Key Point:</strong> Markets trade on <em>surprises</em> versus expectations, not absolute levels. A 2% print that beats a 1.5% forecast rallies the market; a 3% print that misses a 4% forecast sinks it.</p>
+<hr />
+<h2 id="20-stagflation">20. Stagflation</h2>
+<p><strong>Definition:</strong> Stagnant growth + high inflation simultaneously.</p>
+<p><strong>Why Both Asset Classes Fall:</strong>
+- Weak growth hurts stocks (earnings suffer)
+- High inflation hurts bonds (fixed coupons eroded; investors demand higher yields, so prices fall)</p>
+<p><strong>Crucial Difference:</strong> The rescue mechanism is disabled — the Fed can't cut rates without worsening inflation.</p>
+<p><strong>2022 Example:</strong> Both stocks and bonds had one of their worst years in modern history simultaneously. The 60/40 portfolio's correlation flipped from negative to positive.</p>
+<p><strong>Comparison Table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Normal Recession</th>
+<th>Stagflation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Growth</td>
+<td>Weak</td>
+<td>Weak</td>
+</tr>
+<tr>
+<td>Inflation</td>
+<td>Falling</td>
+<td>High/rising</td>
+</tr>
+<tr>
+<td>Fed Response</td>
+<td>Cuts rates</td>
+<td>Can't cut (or hikes)</td>
+</tr>
+<tr>
+<td>Stocks</td>
+<td>Fall</td>
+<td>Fall</td>
+</tr>
+<tr>
+<td>Bonds</td>
+<td>Rise (cushion)</td>
+<td>Fall (no cushion)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="21-number-of-new-issues-ipos-in-market">21. Number of New Issues (IPOs) in Market</h2>
+<p><strong>Mechanics:</strong> IPO count reflects market conditions rather than drives them — causation runs in reverse.</p>
+<p><strong>Sentiment Gauge:</strong> Useful at extremes as a contrarian warning; high IPO clusters often appear near market tops.</p>
+<p><strong>Historical Patterns:</strong>
+- 2000 dot-com wave: near top
+- 2021 SPAC surge: near top
+- Researchers note a "hot issue market" pattern: a flood of new issues signals late-cycle optimism; following years frequently weaker</p>
+<p><strong>Market Impact:</strong> Mechanical impact on broad indices is small; matters more at the individual-stock level (newly-listed stocks are volatile, often underperform in their first 1–2 years) and as a risk-appetite read.</p>
+<p><strong>2025 Data:</strong> 347 IPOs</p>
+<p><strong>All-time high:</strong> 1,035 in 2021 (caveat: SPAC counting convention inflates the 2021 number)</p>
+<hr />
+<h2 id="summary-table-updated-july-2026">Summary Table — Updated July 2026</h2>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>May 2026</th>
+<th>Jul 2026</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FMS Cash</td>
+<td>3.9%</td>
+<td>3.6%</td>
+<td>Sell (more extreme)</td>
+</tr>
+<tr>
+<td>AAII Bullish</td>
+<td>35.6%</td>
+<td>44.9%</td>
+<td>Bullish (above hist. avg)</td>
+</tr>
+<tr>
+<td>M2 Growth</td>
+<td>4.72% YoY</td>
+<td>5.6% YoY ¹</td>
+<td>Bullish (accelerating)</td>
+</tr>
+<tr>
+<td>Buffett Indicator</td>
+<td>235%</td>
+<td>237.9%</td>
+<td>Overvalued (record high)</td>
+</tr>
+<tr>
+<td>CAPE</td>
+<td>~40</td>
+<td>41.12</td>
+<td>Elevated (like 1999)</td>
+</tr>
+<tr>
+<td>Fear &amp; Greed</td>
+<td>60</td>
+<td>37</td>
+<td>Fear (shift from Greed)</td>
+</tr>
+<tr>
+<td>Unemployment</td>
+<td>4.3%</td>
+<td>4.2% ²</td>
+<td>Slight improvement</td>
+</tr>
+<tr>
+<td>Inflation</td>
+<td>3.8%</td>
+<td>3.5% ²</td>
+<td>Easing, above target</td>
+</tr>
+<tr>
+<td>Misery Index</td>
+<td>8.1</td>
+<td>7.7 ²</td>
+<td>Improving</td>
+</tr>
+<tr>
+<td>Yield Curve 10-2</td>
+<td>0.43 spread</td>
+<td>0.37 spread</td>
+<td>Normal (flatter)</td>
+</tr>
+<tr>
+<td>HY Spreads</td>
+<td>272 bps</td>
+<td>271 bps</td>
+<td>Tight/calm</td>
+</tr>
+<tr>
+<td>OFR Stress</td>
+<td>-1.97</td>
+<td>—</td>
+<td>Not retrieved</td>
+</tr>
+<tr>
+<td>Breadth (% &gt;200MA)</td>
+<td>50–70%</td>
+<td>~69%</td>
+<td>Improving (near 70%)</td>
+</tr>
+<tr>
+<td>GDP Growth</td>
+<td>1.6% (Q1)</td>
+<td>~1.7% (Q2 est.) ³</td>
+<td>Sluggish</td>
+</tr>
+<tr>
+<td>Fiscal Deficit</td>
+<td>6% of GDP</td>
+<td>5.8% of GDP</td>
+<td>Elevated (CBO est.)</td>
+</tr>
+<tr>
+<td>Current Account</td>
+<td>2.4% GDP</td>
+<td>2.9% GDP ⁴</td>
+<td>Widening</td>
+</tr>
+</tbody>
+</table>
+<p><em>¹ May 2026 data — June release due July 28 · ² June 2026 data · ³ Atlanta Fed GDPNow estimate as of Jul 17; BEA advance estimate due ~Jul 30 · ⁴ Q1 2026 data released Jun 24</em></p>
+<hr />
+<p><strong>July 2026 Update:</strong> The inflation picture has improved — CPI eased to 3.5% in June (driven by a 5.7% drop in energy prices), pulling the Misery Index down to 7.7. Unemployment ticked down to 4.2%, though payroll growth slowed sharply to 57,000. Valuations remain stretched: the Buffett Indicator hit a new record at 237.9% and the CAPE is 41.12. Notably, sentiment has diverged — AAII bullish sentiment jumped to 44.9% (above its historical average) while the Fear &amp; Greed Index swung to 37 (Fear), and FMS cash hit a more extreme sell-signal at 3.6%. Market breadth has strengthened to ~69%, approaching the healthy 70%+ zone. The current account deficit widened to 2.9% of GDP in Q1 — a reversal from the narrowing trend. The core tension remains: growth is sluggish (~1.7% GDPNow estimate for Q2), credit markets are calm (HY spreads 271 bps), but valuations and a still-elevated Fed rate leave little room for error.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/email.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

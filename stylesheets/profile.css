@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+/* Everything below is scoped to the profile page only (via :has), so other
+   MkDocs pages keep their normal navbar, sidebar and footer. */
+
+/* ---- Hide MkDocs (default theme) chrome so the page reads as a landing page ---- */
+body:has(.profile-landing) .navbar,
+body:has(.profile-landing) footer,
+body:has(.profile-landing) .bs-sidebar,
+body:has(.profile-landing) .col-md-3 {
+  display: none !important;
+}
+
+/* ---- Fixed photo background with dark gradient overlay ---- */
+body:has(.profile-landing) {
+  background: #26333a;
+}
+
+body:has(.profile-landing)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(190deg, transparent 0%, rgba(0, 0, 0, 0.631) 100%),
+    url('../img/bg.jpg');
+  background-position: 0% 0%, center;
+  background-repeat: repeat, no-repeat;
+  background-size: cover, cover;
+}
+
+/* ---- Make the main content area full-bleed and centered ---- */
+body:has(.profile-landing) .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+body:has(.profile-landing) .container > .row {
+  margin: 0 !important;
+}
+
+body:has(.profile-landing) .col-md-9,
+body:has(.profile-landing) [role="main"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
+}
+
+/* ---- The profile card ---- */
+.profile-landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 27rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 4rem 1.75rem;
+  gap: 1.25rem;
+}
+
+.profile-avatar {
+  width: 6.75rem;
+  height: 6.75rem;
+  border-radius: 100%;
+  object-fit: cover;
+  padding: 0.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.569);
+}
+
+.profile-name {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 3.25rem;
+  line-height: 0.9;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+}
+
+.profile-tagline {
+  margin: 0;
+  max-width: 22.5rem;
+  color: #ffffff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.875;
+  font-weight: 300;
+}
+
+/* ---- Stacked social buttons ---- */
+.profile-buttons {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profile-buttons > li {
+  width: 100%;
+}
+
+.profile-buttons > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  padding: 0 1.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.369);
+  background-color: rgba(255, 255, 255, 0.071);
+  background-image: linear-gradient(221deg, rgba(255, 255, 255, 0.122) 3%, transparent 96%);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.profile-buttons > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.231);
+  transform: scale(1.0425);
+}
+
+.profile-buttons > li > a .label {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.profile-buttons > li > a svg {
+  width: 1.5em;
+  height: 1.5em;
+  flex: 0 0 auto;
+  fill: #ffffff;
+  margin-left: 0.5em;
+}
+
+/* ---- Circular contact icons ---- */
+.profile-icons {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.625rem;
+}
+
+.profile-icons > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.11);
+  background-image: linear-gradient(221deg, rgba(255, 255, 255, 0.122) 0%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.369);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.profile-icons > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.341);
+  transform: scale(1.095);
+}
+
+.profile-icons > li > a svg {
+  width: 60%;
+  height: 60%;
+  fill: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 2.5rem;
+  }
+}
