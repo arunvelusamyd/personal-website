@@ -28,7 +28,7 @@
   </article>
 
   <article class="blog-card">
-    <a class="blog-card-link" href="https://medium.com/@arun003.v/ai-terms-b4fcfd4943da" target="_blank" rel="noopener">
+    <a class="blog-card-link" href="../ai-terms/">
       <div class="blog-card-body">
         <div class="blog-card-author">
           <img src="../img/avatar.jpg" alt="Arunkumar Velusamy">
@@ -40,7 +40,6 @@
           <span>May 2026</span>
           <span class="dot">&middot;</span>
           <span>5 min read</span>
-          <span class="dot">&middot;</span><span class="blog-card-source">Medium</span>
         </div>
       </div>
       <div class="blog-card-thumb">
