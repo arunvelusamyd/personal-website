@@ -1,0 +1,12 @@
+site_name: Arunkumar Velusamy
+site_url: https://arunvelusamyd.github.io/personal-website/
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/profile.css
+
+extra_javascript:
+  - javascripts/email.js
