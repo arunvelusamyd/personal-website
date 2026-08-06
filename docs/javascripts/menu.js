@@ -9,9 +9,26 @@
     var items = [
       { label: 'Blogs', path: 'blogs' },
       { label: 'News', path: 'news' },
-      { label: 'Apps', path: 'apps' },
+      {
+        label: 'Apps', path: 'apps',
+        children: [
+          { label: 'Market Indicators', path: 'apps/market-indicators' }
+        ]
+      },
       { label: 'Requests', path: 'requests' }
     ];
+
+    function isActive(path) {
+      return here.indexOf('/' + path) !== -1;
+    }
+
+    function makeLink(item) {
+      var a = document.createElement('a');
+      a.href = base + '/' + item.path + '/';
+      a.textContent = item.label;
+      if (isActive(item.path)) a.className = 'active';
+      return a;
+    }
 
     var nav = document.createElement('nav');
     nav.className = 'site-menu';
@@ -30,13 +47,36 @@
 
     items.forEach(function (item) {
       var li = document.createElement('li');
-      var a = document.createElement('a');
-      a.href = base + '/' + item.path + '/';
-      a.textContent = item.label;
-      if (here.indexOf('/' + item.path) !== -1) {
-        a.className = 'active';
+
+      if (item.children && item.children.length) {
+        li.className = 'has-dropdown';
+        var top = makeLink(item);
+        // mark parent active if any child is active
+        if (item.children.some(function (c) { return isActive(c.path); })) {
+          top.className = 'active';
+        }
+        li.appendChild(top);
+
+        var dd = document.createElement('ul');
+        dd.className = 'site-menu-dropdown';
+        item.children.forEach(function (child) {
+          var cli = document.createElement('li');
+          cli.appendChild(makeLink(child));
+          dd.appendChild(cli);
+        });
+        li.appendChild(dd);
+
+        // Touch/click support: toggle the dropdown when tapping the parent.
+        top.addEventListener('click', function (e) {
+          if (window.matchMedia('(hover: none)').matches) {
+            e.preventDefault();
+            li.classList.toggle('open');
+          }
+        });
+      } else {
+        li.appendChild(makeLink(item));
       }
-      li.appendChild(a);
+
       list.appendChild(li);
     });
 
