@@ -450,3 +450,106 @@ body:has(.profile-landing)::before {
   color: #1a8917; /* Medium green */
   font-weight: 600;
 }
+
+/* ============================================================
+   Top-menu dropdown submenu (Apps → Market Indicators)
+   ============================================================ */
+.site-menu-links .has-dropdown {
+  position: relative;
+}
+
+.site-menu-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 12rem;
+  display: none;
+  background: rgba(18, 24, 28, 0.92);
+  -webkit-backdrop-filter: blur(0.6rem);
+  backdrop-filter: blur(0.6rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Reveal on hover (desktop), keyboard focus, or tap-toggle (.open) */
+.has-dropdown:hover .site-menu-dropdown,
+.has-dropdown:focus-within .site-menu-dropdown,
+.has-dropdown.open .site-menu-dropdown {
+  display: block;
+}
+
+.site-menu-dropdown > li > a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.site-menu-dropdown > li > a:hover,
+.site-menu-dropdown > li > a.active {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* small caret to signal the submenu */
+.has-dropdown > a::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.35em;
+  border-left: 0.28em solid transparent;
+  border-right: 0.28em solid transparent;
+  border-top: 0.3em solid currentColor;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   Apps index page
+   ============================================================ */
+.apps-index {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  font-family: 'Source Sans 3', sans-serif;
+  color: #242424;
+}
+
+.apps-index h1 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+}
+
+.apps-index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.apps-index li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1rem;
+  color: #6b6b6b;
+}
+
+.apps-index li a {
+  font-weight: 600;
+  color: #242424;
+  text-decoration: none;
+}
+
+.apps-index li a:hover {
+  color: #1a8917;
+}
