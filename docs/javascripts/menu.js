@@ -12,7 +12,8 @@
       {
         label: 'Apps', path: 'apps',
         children: [
-          { label: 'Market Indicators', path: 'apps/market-indicators' }
+          { label: 'Market Indicators', path: 'apps/market-indicators' },
+          { label: 'Model Comparison', path: 'apps/model-comparison' }
         ]
       },
       { label: 'Requests', path: 'requests' }
