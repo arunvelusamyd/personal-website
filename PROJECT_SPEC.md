@@ -142,11 +142,22 @@ Small reference utilities, each reached via the **Apps** dropdown submenu. Both 
 indicator table with footnotes + narrative update) extracted from the full `market-indicators.md` article,
 plus a link back to the full write-up.
 
-**AI Model Comparison** (`docs/apps/model-comparison.md`) — **one** 11-column table covering 21 frontier and
-open-weight models: context, price, parameters, training compute, benchmark, capabilities, resource
-intensity, operational risk and provider traffic. Deliberately a single table, not several themed ones —
-followed by a compact footnote line and a Sources section, and nothing else. Carries an
-"Updated &lt;Month Year&gt;" line.
+**AI Model Comparison** (`docs/apps/model-comparison.md`) — **two** tables, each followed by a compact
+footnote line, then a Sources section, and nothing else. Carries an "Updated &lt;Month Year&gt;" line.
+
+1. **Main table** — 11 columns × 21 frontier and open-weight models: context, price, parameters, training
+   compute, benchmark, capabilities, resource intensity, operational risk and provider traffic.
+2. **SOTA by benchmark** — 6 columns × one row per measurement: benchmark, what it measures, leader **with
+   its configuration**, score, open-weight leader, source.
+
+**Benchmark scores are contested — treat this as a standing hazard.** Leaderboards disagree because they
+conflate benchmark variants (SWE-bench Verified vs Pro vs Lite; Terminal-Bench 2.0 vs 2.1), model snapshots
+(`DeepSeek V4 Pro` vs `DeepSeek V4 Pro 0813`, a 16-point spread on the same benchmark name), and effort
+settings (`GPT-5.6 Sol (xhigh)`, `Claude Opus 5 (Adaptive, Max Effort)`). The SOTA table therefore always
+names the configuration and the source, and where two sources conflict it carries **both rows** rather than
+picking a winner. Main-table cells whose score is contested or whose leader is unconfirmed are flagged `⁸`,
+pointing at the SOTA table. BenchLM's weighted composite category indices are deliberately excluded — they
+are not raw scores, and its published "top 3" lists are internally inconsistent.
 
 Two disclosure states are used deliberately and mean different things: **"Not published"** (the lab has
 never disclosed it — true of every parameter count and training-compute figure for every closed model)
