@@ -142,19 +142,24 @@ Small reference utilities, each reached via the **Apps** dropdown submenu. Both 
 indicator table with footnotes + narrative update) extracted from the full `market-indicators.md` article,
 plus a link back to the full write-up.
 
-**AI Model Comparison** (`docs/apps/model-comparison.md`) — 21 frontier and open-weight models compared on
-context, price, parameters, training compute, benchmarks, capabilities, serving footprint and operational
-risk, plus provider adoption/traffic figures and a use-case picker. Sourced from web research and carries
-an "Updated &lt;Month Year&gt;" line; every figure is dated and linked in a Sources section.
+**AI Model Comparison** (`docs/apps/model-comparison.md`) — **one** 11-column table covering 21 frontier and
+open-weight models: context, price, parameters, training compute, benchmark, capabilities, resource
+intensity, operational risk and provider traffic. Deliberately a single table, not several themed ones —
+followed by a compact footnote line and a Sources section, and nothing else. Carries an
+"Updated &lt;Month Year&gt;" line.
 
-Two disclosure states are used deliberately and mean different things: **"not published"** (the lab has
+Two disclosure states are used deliberately and mean different things: **"Not published"** (the lab has
 never disclosed it — true of every parameter count and training-compute figure for every closed model)
 versus **"—"** (may be public, didn't surface in the research). Preserve that distinction on refresh;
 it is the most useful thing on the page.
 
-**Table-width constraint:** the default MkDocs theme renders tables as Bootstrap `.table` inside
-`col-md-9`, so anything wider than ~5 columns overflows on mobile. Split wide comparisons into several
-themed ≤5-column tables rather than adding scroll CSS.
+**Wide-table pattern:** the theme renders content tables at full width inside `col-md-9`, so an 11-column
+table would overflow on mobile. The table is wrapped in
+`<div class="table-responsive" markdown="1">` — Bootstrap's own `overflow-x: auto` helper, already bundled
+in `site/css/bootstrap.min.css`, so **no new CSS**. The `markdown="1"` attribute is what lets the Markdown
+table render inside raw HTML (needs the `md_in_html` extension, already enabled). `theme/js/base.js` then
+adds `.table table-striped table-hover` to every table at runtime, so the wrapped table still picks up
+standard styling. Reuse this wrapper for any future wide table.
 
 ### 5.5 Requests
 Placeholder page; behavior **to be defined by the user**.
@@ -220,9 +225,10 @@ cut on 30 Jul 2026; Gemini 3.7 Flash's promo rate expires Dec 2026).
 1. **Re-search** — WebSearch current pricing and lineups per provider (Anthropic, OpenAI, Google), current
    benchmark leaderboards (GPQA, SWE-bench, Terminal-Bench), open-weight releases, and Similarweb-style
    traffic/market-share figures.
-2. **Update** — revise the tables in `docs/apps/model-comparison.md`; add or retire models as needed.
-   Keep the "not published" vs "—" distinction honest — do **not** fill in parameter counts or training
-   compute for closed models.
+2. **Update** — revise the table in `docs/apps/model-comparison.md`; add or retire model rows as needed.
+   Keep the "Not published" vs "—" distinction honest — do **not** fill in parameter counts or training
+   compute for closed models. Keep it to one table; put any new caveat in the footnote line, not a new
+   prose section.
 3. **Re-date** — bump the `*Updated <Month Year>*` line and refresh the Sources section links.
 4. **Deploy** — `mkdocs build --strict` to verify, then commit + push.
 
