@@ -228,7 +228,8 @@ cut on 30 Jul 2026; Gemini 3.7 Flash's promo rate expires Dec 2026).
 2. **Update** — revise the table in `docs/apps/model-comparison.md`; add or retire model rows as needed.
    Keep the "Not published" vs "—" distinction honest — do **not** fill in parameter counts or training
    compute for closed models. Keep it to one table; put any new caveat in the footnote line, not a new
-   prose section.
+   prose section. **Re-check the `SOTA` markers** — they go stale fastest; each one means "highest value
+   in this table for that benchmark", so a single new row can invalidate several.
 3. **Re-date** — bump the `*Updated <Month Year>*` line and refresh the Sources section links.
 4. **Deploy** — `mkdocs build --strict` to verify, then commit + push.
 
