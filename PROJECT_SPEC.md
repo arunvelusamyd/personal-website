@@ -147,8 +147,15 @@ footnote line, then a Sources section, and nothing else. Carries an "Updated &lt
 
 1. **Main table** — 11 columns × 21 frontier and open-weight models: context, price, parameters, training
    compute, benchmark, capabilities, resource intensity, operational risk and provider traffic.
-2. **SOTA by benchmark** — 6 columns × one row per measurement: benchmark, what it measures, leader **with
-   its configuration**, score, open-weight leader, source.
+2. **Benchmark scores by model** — 9 columns × 31 models: licence, then one column per benchmark
+   (TB 2.0, TB 2.1, OSWorld-V, ARC-AGI-2, HLE, GPQA, SWE-bench Verified). **Bold = column leader.**
+   Model list is the union of every leaderboard's published slice, so it deliberately differs from the
+   main table's 21 — it includes models like Claude Mythos 5, Grok 4.6 and Kimi K3 that lead benchmarks
+   without being buyable API options, and omits main-table models nobody has benchmarked.
+
+   **It is ~24% dense and that is expected.** Most leaderboards publish only a top-10 view, so "—" means
+   *not in the retrieved slice* — never a zero. Do not fill gaps by inference; an empty cell is honest and
+   a guessed one is not.
 
 **Benchmark scores are contested — treat this as a standing hazard.** Leaderboards disagree because they
 conflate benchmark variants (SWE-bench Verified vs Pro vs Lite; Terminal-Bench 2.0 vs 2.1), model snapshots
