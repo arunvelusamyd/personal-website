@@ -237,6 +237,10 @@ after the incident cleared. If a deploy hangs, check https://www.githubstatus.co
 3. Reuse existing styles where possible; build + push.
 
 ### 7.4 Refresh the AI Model Comparison
+**Use the `model-table-updater` agent** (`Notes/.claude/agents/model-table-updater.md`) — just ask for
+"update the model table". It carries the working/blocked source list, the honesty rules, and the
+verification steps. The manual steps below are what it does, kept here so the workflow survives the agent.
+
 The page is a **living reference**, not a dated post — model pricing moves fast (two OpenAI tiers were
 cut on 30 Jul 2026; Gemini 3.7 Flash's promo rate expires Dec 2026).
 
