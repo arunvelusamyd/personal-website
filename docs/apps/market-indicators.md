@@ -2,29 +2,59 @@
 
 A quick-reference snapshot of the market indicators. For the full breakdown of each indicator, read the [complete write-up](../../market-indicators/).
 
-## Summary Table — Updated July 2026
+## Summary Table — Updated August 2026
 
-| Indicator | May 2026 | Jul 2026 | Signal |
+| Indicator | Jul 2026 | Aug 2026 | Signal |
 |-----------|----------|----------|--------|
-| FMS Cash | 3.9% | 3.6% | Sell (more extreme) |
-| AAII Bullish | 35.6% | 44.9% | Bullish (above hist. avg) |
-| M2 Growth | 4.72% YoY | 5.6% YoY ¹ | Bullish (accelerating) |
-| Buffett Indicator | 235% | 237.9% | Overvalued (record high) |
-| CAPE | ~40 | 41.12 | Elevated (like 1999) |
-| Fear & Greed | 60 | 37 | Fear (shift from Greed) |
-| Unemployment | 4.3% | 4.2% ² | Slight improvement |
-| Inflation | 3.8% | 3.5% ² | Easing, above target |
-| Misery Index | 8.1 | 7.7 ² | Improving |
-| Yield Curve 10-2 | 0.43 spread | 0.37 spread | Normal (flatter) |
-| HY Spreads | 272 bps | 271 bps | Tight/calm |
-| OFR Stress | -1.97 | — | Not retrieved |
-| Breadth (% >200MA) | 50–70% | ~69% | Improving (near 70%) |
-| GDP Growth | 1.6% (Q1) | ~1.7% (Q2 est.) ³ | Sluggish |
-| Fiscal Deficit | 6% of GDP | 5.8% of GDP | Elevated (CBO est.) |
-| Current Account | 2.4% GDP | 2.9% GDP ⁴ | Widening |
+| FMS Cash | 3.6% | 3.6% ¹ | Sell (cash ≤4%) |
+| AAII Bullish | 44.9% | 34.7% | Bearish (below hist. avg) |
+| M2 Growth | 5.6% YoY | 5.5% YoY ² | Bullish (expanding) |
+| Buffett Indicator | 237.9% | 243% | Overvalued (record high) |
+| CAPE | 41.12 | 42.56 | Elevated (near 1999 peak) |
+| Fear & Greed | 37 | 65 | Greed (shift from Fear) |
+| Unemployment | 4.2% | 4.1% ³ | Slight improvement |
+| Inflation | 3.5% | 3.3% ³ | Easing, above target |
+| Misery Index | 7.7 | 7.4 ³ | Comfortable (below 8) |
+| Yield Curve 10-2 | 0.37 spread | 0.51 spread | Normal (steepening) |
+| HY Spreads | 271 bps | 271 bps | Tight/calm |
+| OFR Stress | — | -2.74 | Calm (well below zero) |
+| Breadth (% >200MA) | ~69% | ~73% | Healthy (above 70%) |
+| GDP Growth | ~1.7% (Q2 est.) | 1.5% (Q2 actual) ⁴ | Sluggish (below trend) |
+| Fiscal Deficit | 5.8% of GDP | 6.1% of GDP ⁵ | Elevated (widening) |
+| Current Account | 2.9% GDP | 2.8% GDP ⁶ | Wide (Q1 vintage) |
 
-*¹ May 2026 data — June release due July 28 · ² June 2026 data · ³ Atlanta Fed GDPNow estimate as of Jul 17; BEA advance estimate due ~Jul 30 · ⁴ Q1 2026 data released Jun 24*
+*¹ July 2026 survey — August FMS not yet released · ² June 2026 data — July release due Aug 25 · ³ July 2026 data · ⁴ BEA Q2 2026 actual, no longer an estimate · ⁵ 12-month rolling deficit through July 2026 · ⁶ Q1 2026 data — Q2 release due September*
 
 ---
 
-**July 2026 Update:** The inflation picture has improved — CPI eased to 3.5% in June (driven by a 5.7% drop in energy prices), pulling the Misery Index down to 7.7. Unemployment ticked down to 4.2%, though payroll growth slowed sharply to 57,000. Valuations remain stretched: the Buffett Indicator hit a new record at 237.9% and the CAPE is 41.12. Notably, sentiment has diverged — AAII bullish sentiment jumped to 44.9% (above its historical average) while the Fear & Greed Index swung to 37 (Fear), and FMS cash hit a more extreme sell-signal at 3.6%. Market breadth has strengthened to ~69%, approaching the healthy 70%+ zone. The current account deficit widened to 2.9% of GDP in Q1 — a reversal from the narrowing trend. The core tension remains: growth is sluggish (~1.7% GDPNow estimate for Q2), credit markets are calm (HY spreads 271 bps), but valuations and a still-elevated Fed rate leave little room for error.
+**August 2026 Update:** The labor market is where the story turned. Payrolls fell 23,000 in July — the first outright decline of this cycle — even as the unemployment rate ticked down to 4.1%. Inflation eased again to 3.3%, pulling the Misery Index to 7.4, but the improvement increasingly looks like softening demand rather than a soft landing: Q2 GDP printed 1.5%, below the ~1.7% GDPNow had estimated. Markets have read it the other way. The Fear & Greed Index swung from 37 (Fear) to 65 (Greed), breadth strengthened past the healthy threshold to ~73%, and the yield curve steepened to 0.51 as rate-cut expectations firmed. Credit remains untroubled — high-yield spreads unchanged at 271 bps, OFR stress deeply negative at -2.74. Yet valuations kept climbing into the weakness, with the Buffett Indicator at 243% and CAPE at 42.56, and the deficit widened to 6.1% of GDP. Retail investors are the dissenters: AAII bulls fell to 34.7%, below the 37.5% average.
+
+## Sources
+
+**Federal Reserve (FRED)**
+
+- [M2 money stock — M2SL](https://fred.stlouisfed.org/series/M2SL)
+- [Unemployment rate — UNRATE](https://fred.stlouisfed.org/series/UNRATE)
+- [Consumer Price Index — CPIAUCSL](https://fred.stlouisfed.org/series/CPIAUCSL)
+- [10Y-2Y Treasury spread — T10Y2Y](https://fred.stlouisfed.org/series/T10Y2Y)
+- [High-yield option-adjusted spread — BAMLH0A0HYM2](https://fred.stlouisfed.org/series/BAMLH0A0HYM2)
+- [Real GDP growth rate — A191RL1Q225SBEA](https://fred.stlouisfed.org/series/A191RL1Q225SBEA)
+- [Balance on current account — IEABC](https://fred.stlouisfed.org/series/IEABC)
+- [Nonfarm payrolls — PAYEMS](https://fred.stlouisfed.org/series/PAYEMS)
+
+**Sentiment & valuation**
+
+- [BofA Global Fund Manager Survey — July 2026 results](https://macenews.com/bofa-global-research-fund-manager-survey-fund-managers-reduce-cash-holdings-move-into-stocks-and-bonds-in-july/)
+- [AAII Investor Sentiment Survey](https://www.aaii.com/sentimentsurvey)
+- [Shiller PE (CAPE) — multpl.com](https://www.multpl.com/shiller-pe)
+- [Buffett Indicator — buffettindicator.org](https://buffettindicator.org/)
+- [CNN Fear & Greed Index](https://www.cnn.com/markets/fear-and-greed)
+- [S&P 500 stocks above 200-day average — $S5TH](https://www.barchart.com/stocks/quotes/$S5TH)
+
+**Stress & fiscal**
+
+- [OFR Financial Stress Index](https://www.financialresearch.gov/financial-stress-index/)
+- [CRFB — 12-month rolling deficit, July 2026](https://www.crfb.org/blogs/12-month-rolling-deficit-19-trillion-july-2026)
+- [Atlanta Fed GDPNow](https://www.atlantafed.org/cqer/research/gdpnow)
+
+*Retrieved 17 August 2026. CNN's Fear & Greed endpoint and aaii.com both block automated access; those two readings were taken from published secondary reports of the same figures. The August BofA Fund Manager Survey had not been released at the time of retrieval, so the FMS cash row carries the July survey value, marked accordingly.*
