@@ -8,7 +8,7 @@
 
     var items = [
       { label: 'Blogs', path: 'blogs' },
-      { label: 'News', path: 'news' },
+      { label: 'News & Reports', path: 'news' },
       {
         label: 'Apps', path: 'apps',
         children: [

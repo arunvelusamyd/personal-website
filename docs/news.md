@@ -1,7 +1,7 @@
 <div class="blog-feed">
 
   <header class="blog-feed-head">
-    <h1>News</h1>
+    <h1>News &amp; Reports</h1>
     <p>Daily Bytes — a daily tech briefing for software engineers.</p>
   </header>
 
