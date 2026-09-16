@@ -17,7 +17,7 @@
         <div class="blog-card-meta">
           <span>Jun 2026</span>
           <span class="dot">&middot;</span>
-          <span>13 min read</span>
+          <span>27 min read</span>
           
         </div>
       </div>
