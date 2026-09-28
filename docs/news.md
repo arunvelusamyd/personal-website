@@ -2,7 +2,7 @@
 
   <header class="blog-feed-head">
     <h1>News &amp; Reports</h1>
-    <p>Daily tech briefings and long-form reference reports.</p>
+    <p>Daily tech briefings and long-form reference reports — fully AI-generated, reviewed by me.</p>
   </header>
 
   <article class="blog-card">
