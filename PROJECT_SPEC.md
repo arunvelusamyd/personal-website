@@ -4,7 +4,7 @@
 > deployed, and the repeatable workflows for adding content. Kept in the repo root
 > (not under `docs/`, so it is **not** published to the site).
 >
-> **Last verified against the repo: 28 September 2026.** Counts, table dimensions and menu labels
+> **Last verified against the repo: 29 September 2026.** Counts, table dimensions and menu labels
 > below were checked against the working tree on that date, not carried forward.
 
 ---
@@ -33,11 +33,12 @@ and deploys automatically on push.
 |---|---|---|
 | Static site generator | **MkDocs 1.6.1** (default theme) | Content authored in Markdown under `docs/`. |
 | Markdown extensions | `attr_list`, `md_in_html` | Enable raw HTML + attribute lists in Markdown (used for the profile card, feeds, dropdown). Tables render out of the box. |
-| Styling | Single `docs/stylesheets/profile.css` | Custom card/feed/menu styling; scoped with `:has()` so only the relevant pages get full-bleed/dark treatment. |
+| Styling | Single `docs/stylesheets/profile.css` | Custom card/feed/menu/reading-layout styling; scoped with `:has()` and marker classes so each page type gets its own treatment. |
+| Templates | `overrides/main.html` (`theme.custom_dir: overrides`) | Overrides the theme's `content` block to give articles, News & Reports and app pages a reading layout (§5.6). Everything else falls through to the stock theme. |
 | Client JS | `docs/javascripts/menu.js`, `docs/javascripts/email.js` | Menu injected at runtime; email assembled client-side to dodge scrapers. |
 | Hosting | **GitHub Pages** via **GitHub Actions** | Repo: `arunvelusamyd/personal-website`. Publishes on push to `main`. |
 | Custom domain | `arunkumar-velusamy.com` (apex) | Cloudflare DNS, **grey-cloud / DNS-only**, GitHub-issued HTTPS. |
-| Fonts | Google Fonts (Inter, Source Sans 3) via `@import` | Requires internet; falls back to system sans-serif. |
+| Fonts | Google Fonts (Inter, Source Sans 3, Source Serif 4) via `@import` | Requires internet; falls back to system sans-serif / Georgia. |
 
 **Why GitHub Actions (not `mkdocs gh-deploy`):** the legacy branch-based Pages builder's *deploy* stage
 failed repeatedly (build succeeded, deploy failed) during a GitHub Pages incident. We switched to the
@@ -51,14 +52,16 @@ path and auto-deploys on every push. `mkdocs gh-deploy` is **no longer used**.
 ```
 personal-website/
 ├── .github/workflows/deploy.yml   # CI: build mkdocs + deploy to Pages on push to main
-├── mkdocs.yml                     # site config (site_url = custom domain)
+├── mkdocs.yml                     # site config (site_url = custom domain, theme.custom_dir)
 ├── PROJECT_SPEC.md                # this file (not published)
+├── overrides/
+│   └── main.html                  # reading-layout template for articles / news / app pages (§5.6)
 ├── docs/
 │   ├── CNAME                      # "arunkumar-velusamy.com" — persists custom domain across deploys
 │   ├── index.md                   # Profile hero (site homepage)
 │   ├── blogs.md                   # Blogs feed (Medium-style cards → hosted articles)
 │   ├── news.md                    # News feed (Daily Bytes cards → dated briefings)
-│   ├── apps.md                    # Apps index (lists available apps)
+│   ├── apps.md                    # Apps index (card grid of available apps)
 │   ├── requests.md                # placeholder
 │   ├── market-indicators.md       # long-form blog article (full write-up)
 │   ├── <17 blog articles>.md      # ai-terms, agent-engineering, neural-networks, gpu, … etc.
@@ -92,8 +95,10 @@ sub-pages (→ `/X/<page>/`). Used by **apps** and **news**.
 
 The menu uses MkDocs' per-page `base_url` global so links resolve at any path (root or subpath).
 Dropdowns open on hover/focus (desktop) and tap-toggle (mobile). The default MkDocs navbar/footer are
-hidden globally; the doc sidebar/TOC is hidden only on the custom feed/landing pages (via `:has()`),
-and kept on long-form article pages.
+hidden globally, and the theme's doc sidebar/TOC is no longer shown anywhere: feed/landing pages hide it
+via `:has()`, and every article, news and app page uses the reading layout (§5.6), which has its own
+contents list. On a blog article (served at `/<slug>/`, not under `/blogs/`), `menu.js` still highlights
+**Blogs** by detecting `.blog-article--blog`.
 
 ### Pages
 
@@ -128,9 +133,13 @@ All **17** published Medium stories are **hosted as Markdown** (not linked out).
 - **7 older stories** — not in the RSS feed; fetched via **WebFetch verbatim transcription** (Medium blocks `curl` with 403). Text is complete; these older posts had no real cover images (text-only cards).
 
 Each article follows the format of `docs/market-indicators.md`: `# Title`, optional `*italic subtitle*`,
-`*By Arunkumar Velusamy · <Mon YYYY>*`, `---`, then the body. The **feed** (`blogs.md`) is a list of
-`.blog-card` entries (author line, title, excerpt, date, read time, optional thumbnail), newest first,
-each linking to the hosted article.
+`*By Arunkumar Velusamy · <Mon YYYY>*`, `---`, then the body. **Keep that header shape** — the reading
+layout (§5.6) styles the subtitle, the avatar byline and the header rule purely from their position.
+
+The **feed** (`blogs.md`, wrapper `.blog-feed.blog-feed--grid`) is a magazine grid of `.blog-card`
+entries (author line, title, excerpt, date, read time, optional thumbnail), newest first, each linking
+to the hosted article. The first card is **featured** (full width, image beside text); the rest sit in
+two columns with the cover on top. Cards without a thumbnail get a green accent strip instead.
 
 ### 5.3 News & Reports
 Renamed from "News" in Aug 2026 (`b82f36e`) — menu label and page heading only, the URL stayed `/news/`.
@@ -145,11 +154,17 @@ The section now carries **two kinds of page**:
   First: `docs/news/payment-systems-sg-my-in-hk.md`.
 
 Because the site is static (no AI at runtime), both are **generated on demand by Claude Code**.
-`news.md` is a `.blog-feed` mixing both card types, newest first.
+`news.md` is a `.blog-feed.blog-feed--grid` mixing both card types, newest first (same grid as Blogs;
+newest item featured). Both page kinds render in the reading layout (§5.6) with an
+"AI-generated · reviewed by" footer; their italic first line becomes the subtitle (no avatar byline).
 
 ### 5.4 Apps
-Small reference utilities, each reached via the **Apps** dropdown submenu. Both are plain Markdown
-(no wrapper `<div>`), so they keep the standard doc layout — the sidebar TOC is useful on long pages.
+Small reference utilities, each reached via the **Apps** dropdown submenu. The index (`apps.md`) is a
+`.blog-feed.blog-feed--grid.blog-feed--even` card grid — `--even` turns off the featured first card so
+the apps sit side by side. Cards say "Living reference" rather than a date, because the refresh agents
+update only the app pages and a card date would go stale. The app pages themselves are plain Markdown
+rendered in the **wide** variant of the reading layout (§5.6): a 64rem column for the tables, prose
+capped at a readable width, no contents list.
 
 **Market Indicators** (`docs/apps/market-indicators.md`) — the **Summary Table**: a 4-column × 16-row
 indicator table with a footnote line, a dated narrative paragraph and a Sources section, plus a link back
@@ -199,17 +214,42 @@ never disclosed it — true of every parameter count and training-compute figure
 versus **"—"** (may be public, didn't surface in the research). Preserve that distinction on refresh;
 it is the most useful thing on the page.
 
-**Wide-table pattern:** the theme renders content tables at full width inside `col-md-9`, so an 11-column
+**Wide-table pattern:** content tables render at full width inside the 64rem app column, so an 11-column
 table would overflow on mobile. **Both** model-comparison tables (11-col and 9-col) are wrapped in
 `<div class="table-responsive" markdown="1">` — Bootstrap's own `overflow-x: auto` helper, already bundled
 in `site/css/bootstrap.min.css`, so **no new CSS**. The `markdown="1"` attribute is what lets the Markdown
 table render inside raw HTML (needs the `md_in_html` extension, already enabled). `theme/js/base.js` then
 adds `.table table-striped table-hover` to every table at runtime, so the wrapped table still picks up
-standard styling. Reuse this wrapper for any future wide table — but note the Market Indicators table is
+standard styling, which the reading layout then restyles (shaded header, light striping). Reuse this
+wrapper for any future wide table — but note the Market Indicators table is
 **deliberately unwrapped** (4 columns fit a phone unaided); adding a wrapper there would be a regression.
 
 ### 5.5 Requests
 Placeholder page; behavior **to be defined by the user**.
+
+### 5.6 Reading layout (`overrides/main.html`)
+Added Sep 2026. The template overrides the theme's `content` block and picks a page **kind** from the
+source path — no front matter or per-page markup needed, so new pages pick it up automatically:
+
+| Kind | Which pages | Back link / footer | Contents list |
+|---|---|---|---|
+| `blog` | any top-level `docs/<slug>.md` except `index`, `blogs`, `news`, `apps`, `requests` | "← All blogs" / "Written by … · More blogs · Follow on Medium" | "In this article" |
+| `news` | anything under `docs/news/` | "← All news & reports" / "AI-generated · reviewed by …" | "On this page" |
+| `app` | anything under `docs/apps/` | "← All apps" / "Maintained by … · More apps" | none (wide column) |
+
+Any other page falls through to the stock theme layout. **Adding a new top-level landing page means
+adding it to the `landing` list in the template**, or it will be styled as a blog article.
+
+The layout: centred 42rem serif reading column (64rem for apps), white page, sans headings, captions for
+the italic line under an image, soft code blocks, a sticky contents list on screens ≥1200px when a page
+has 3+ `##` sections, and a thin reading-progress bar (browsers with scroll-driven animations only).
+Header styling is positional: a paragraph right after `# Title` is the subtitle; on blog articles the
+paragraph before the first `---` is the avatar byline; a `---` directly after the header lines is a thin
+rule, and every other `---` renders as a centred "· · ·" section break.
+
+Two theme quirks the CSS works around: the theme frames every content image (`.col-md-9 img` — padding,
+border, auto margins), which the cards and articles reset; and a global `footer { display: none }` hides
+the theme footer, so the author footer is a `<div class="blog-article-end">`, not a `<footer>`.
 
 ---
 
@@ -273,7 +313,8 @@ Year>*` rather than a date heading; use byline "Report" on the card and a descri
 ("Reference guide") where a briefing would carry its read time. Same feed, same deploy.
 
 ### 7.3 Add an app
-1. `docs/apps/<app>.md` for the app page; add a link in `docs/apps.md`.
+1. `docs/apps/<app>.md` for the app page; add a `.blog-card` to `docs/apps.md` (link `<app>/`,
+   author line "App", meta "Living reference").
 2. Add a child entry under the **Apps** item's `children` array in `docs/javascripts/menu.js`.
 3. Reuse existing styles where possible; build + push.
 
@@ -337,8 +378,8 @@ from something you broke, rebuild with your change stashed and compare.
 
 Reusable class families (avoid new CSS by reusing these):
 - **`.profile-landing`** + `.profile-avatar/.profile-name/.profile-tagline/.profile-buttons/.profile-icons` — the hero card. Triggers dark fixed-background + hidden chrome via `body:has(.profile-landing)`.
-- **`.blog-feed`** + `.blog-card` (`.blog-card-body/-author/-title/-excerpt/-meta/-thumb`) — Medium-style feeds. Used by **both** Blogs and News. Full-bleed + hidden sidebar via `body:has(.blog-feed)`.
-- **`.apps-index`** — simple list for the Apps index.
+- **`.blog-feed`** + `.blog-card` (`.blog-card-body/-author/-title/-excerpt/-meta/-thumb`) — feeds. Used by Blogs, News and Apps. Full-bleed + hidden sidebar via `body:has(.blog-feed)`. The plain `.blog-feed` is a single-column list; **`.blog-feed--grid`** turns it into the card grid (warm `#f6f4ef` background, featured first card), and **`.blog-feed--even`** drops the featured card.
+- **`.blog-article`** (`.blog-article--blog/--news/--app`) + `.blog-article-layout` (`.has-toc`, `.is-wide`), `.blog-article-body`, `.blog-article-toc`, `.blog-article-end`, `.blog-article-progress` — the reading layout emitted by `overrides/main.html` (§5.6).
 - **`.coming-soon`** — centered placeholder (Requests).
 - **`.site-menu`** + `.site-menu-inner/-brand/-links` and `.has-dropdown/.site-menu-dropdown` — the top menu and Apps dropdown.
 
@@ -352,6 +393,7 @@ Scoping principle: page-type-specific layout (dark background, hidden sidebar, f
 **Done**
 - Profile hero, 17 hosted blogs + feed.
 - News & Reports (renamed from "News", Aug 2026): 1 Daily Bytes briefing + 1 long-form report.
+- Redesign (Sep 2026): card-grid feeds for Blogs / News / Apps and a reading layout for every article, news and app page (§5.6).
 - Apps → Market Indicators summary table + dropdown; refreshed on demand via agent (§7.5).
 - Apps → AI Model Comparison (21 models + 31-model benchmark matrix; refresh workflow in §7.4).
 - GitHub Actions deployment; custom domain live over HTTPS at `arunkumar-velusamy.com`.

@@ -1,4 +1,4 @@
-<div class="blog-feed">
+<div class="blog-feed blog-feed--grid">
 
   <header class="blog-feed-head">
     <h1>News &amp; Reports</h1>

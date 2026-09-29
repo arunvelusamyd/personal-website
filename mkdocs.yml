@@ -1,6 +1,10 @@
 site_name: Arunkumar Velusamy
 site_url: https://arunkumar-velusamy.com/
 
+theme:
+  name: mkdocs
+  custom_dir: overrides   # blog article reading layout (overrides/main.html)
+
 markdown_extensions:
   - attr_list
   - md_in_html

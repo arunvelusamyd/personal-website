@@ -20,6 +20,8 @@
     ];
 
     function isActive(path) {
+      // Blog articles live at /<slug>/, so flag Blogs via the article layout.
+      if (path === 'blogs' && document.querySelector('.blog-article--blog')) return true;
       return here.indexOf('/' + path) !== -1;
     }
 

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{#- Reading layout for blog articles, News & Reports and Apps pages:
+    centred column, no doc sidebar, footer. A blog article is any
+    top-level page that is not a section/landing page; news and app
+    pages are anything under news/ and apps/. New pages pick this up
+    automatically; the landing pages keep the default layout. App pages
+    are mostly tables, so they get a wider column and no contents list. -#}
+{%- block content %}
+{%- set landing = ['index.md', 'blogs.md', 'news.md', 'apps.md', 'requests.md'] %}
+{%- set src = page.file.src_uri if page else '' %}
+{%- if src.startswith('news/') %}
+  {%- set kind = 'news' %}
+{%- elif src.startswith('apps/') %}
+  {%- set kind = 'app' %}
+{%- elif page and '/' not in src and src not in landing %}
+  {%- set kind = 'blog' %}
+{%- else %}
+  {%- set kind = none %}
+{%- endif %}
+{%- if kind %}
+{%- set sections = page.toc.items[0].children if page.toc.items and kind != 'app' else [] %}
+<div class="col-md-12" role="main">
+  <div class="blog-article-progress" aria-hidden="true"></div>
+  <div class="blog-article-layout{% if sections|length >= 3 %} has-toc{% endif %}{% if kind == 'app' %} is-wide{% endif %}">
+    <article class="blog-article blog-article--{{ kind }}">
+      {%- if kind == 'news' %}
+      <a class="blog-article-back" href="{{ base_url }}/news/">&larr; All news &amp; reports</a>
+      {%- elif kind == 'app' %}
+      <a class="blog-article-back" href="{{ base_url }}/apps/">&larr; All apps</a>
+      {%- else %}
+      <a class="blog-article-back" href="{{ base_url }}/blogs/">&larr; All blogs</a>
+      {%- endif %}
+      <div class="blog-article-body">
+        {{ page.content }}
+      </div>
+      <div class="blog-article-end">
+        <img src="{{ base_url }}/img/avatar.jpg" alt="Arunkumar Velusamy">
+        <div>
+          {%- if kind == 'news' %}
+          <p class="blog-article-end-name">AI-generated &middot; reviewed by Arunkumar Velusamy</p>
+          <p class="blog-article-end-links">
+            <a href="{{ base_url }}/news/">More news &amp; reports</a>
+          </p>
+          {%- elif kind == 'app' %}
+          <p class="blog-article-end-name">Maintained by Arunkumar Velusamy</p>
+          <p class="blog-article-end-links">
+            <a href="{{ base_url }}/apps/">More apps</a>
+          </p>
+          {%- else %}
+          <p class="blog-article-end-name">Written by Arunkumar Velusamy</p>
+          <p class="blog-article-end-links">
+            <a href="{{ base_url }}/blogs/">More blogs</a>
+            <span class="dot">&middot;</span>
+            <a href="https://medium.com/@arun003.v" target="_blank" rel="noopener">Follow on Medium</a>
+          </p>
+          {%- endif %}
+        </div>
+      </div>
+    </article>
+    {%- if sections|length >= 3 %}
+    <aside class="blog-article-toc">
+      <p>{{ 'On this page' if kind == 'news' else 'In this article' }}</p>
+      <ul>
+        {%- for s in sections %}
+        <li><a href="{{ s.url }}">{{ s.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </aside>
+    {%- endif %}
+  </div>
+</div>
+{%- else %}
+{{ super() }}
+{%- endif %}
+{%- endblock %}
